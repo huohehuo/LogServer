@@ -56,7 +56,7 @@ public class StatisticalDao {
 		List<StatisticalBean> list = new ArrayList<>();
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT AppID  FROM Tb_Statistical where realtime like '"+time+"%' GROUP BY AppID";
+			String SQL = "SELECT AppID  FROM Tb_Statistical where realTimeShort = '"+time+"' GROUP BY AppID";
 			Lg.e("获取活跃数据："+SQL);
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -82,7 +82,7 @@ public class StatisticalDao {
 		int num=0;
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT distinct imie FROM Tb_Statistical WHERE AppID=? AND realTime=?";
+			String SQL = "SELECT distinct imie FROM Tb_Statistical WHERE AppID=? AND realTimeShort=?";
 			sta = conn.prepareStatement(SQL);
 			sta.setString(1,appid);
 			sta.setString(2,CommonUtil.getTime(true));
@@ -152,7 +152,7 @@ public class StatisticalDao {
 		int num=0;
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT * FROM Tb_Statistical WHERE realTime LIKE ?";
+			String SQL = "SELECT * FROM Tb_Statistical WHERE realTimeShort LIKE ?";
 			sta = conn.prepareStatement(SQL);
 			sta.setString(1,CommonUtil.getTime(true));
 			rs = sta.executeQuery();
@@ -175,7 +175,7 @@ public class StatisticalDao {
 		int num=0;
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT sum(num) as 总数 FROM Tb_Statistical WHERE realTimeShort LIKE ? GROUP by realTime";
+			String SQL = "SELECT sum(num) as 总数 FROM Tb_Statistical WHERE realTimeShort = ? GROUP by realTime";
 //			String SQL = "Select sum(num) as 总数,realtime From Tb_Statistical WHERE realTime =? GROUP by realTime";
 			sta = conn.prepareStatement(SQL);
 			sta.setString(1,CommonUtil.getTime(true));
@@ -183,7 +183,6 @@ public class StatisticalDao {
 			while (rs.next()) {
 //			Lg.e("得到行数"+rs.getRow());
 //			num=rs.getRow();
-				Lg.e("得到数量",rs.getString("总数"));
 				num+=MathUtil.toInt(rs.getString("总数"));
 			}
 		} catch (ClassNotFoundException e) {
@@ -193,8 +192,10 @@ public class StatisticalDao {
 		}finally {
 			JDBCUtil.close(rs,sta,conn);
 		}
+		Lg.e("当天活跃度",num);
 		return num+"";
 	}
+
 	//获取统计信息表中的当天的活跃用户数
 	public List<LiveDataBean> getStatisticalLiveData4User(String time){
 		List<LiveDataBean> liveDataBeans = new ArrayList<>();
@@ -202,7 +203,7 @@ public class StatisticalDao {
 
 			conn = JDBCUtil.getSQLite4Statistical();
 //			String SQL = "SELECT distinct realTime FROM Tb_Statistical WHERE realTime =?";
-			String SQL = "Select count(1) as 行数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realtime";
+			String SQL = "Select count(1) as 行数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realTimeShort";
 			Lg.e("获取当天活跃用户数SQL:"+SQL);
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -225,14 +226,14 @@ public class StatisticalDao {
 		Lg.e("得到当天活跃用户数据",liveDataBeans);
 		return liveDataBeans;
 	}
-	//获取统计信息表中的当月的活跃用户数
+	//获取统计信息表中的当月的活跃度
 	public List<LiveDataBean> getStatisticalLiveData4Num(String time){
 		List<LiveDataBean> liveDataBeans = new ArrayList<>();
 		try {
 
 			conn = JDBCUtil.getSQLite4Statistical();
 //			String SQL = "SELECT distinct realTime FROM Tb_Statistical WHERE realTime =?";
-			String SQL = "Select sum(num) as 总数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realtime";
+			String SQL = "Select sum(num) as 总数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realTimeShort";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
 			while (rs.next()) {

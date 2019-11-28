@@ -90,16 +90,17 @@
     String statisticalNum = statisticalDao.getStatisticalNum();
     String statisticalLiveUserNum = statisticalDao.getStatisticalLiveUserNum();//获取统计信息表中的当天的活跃用户数
     String statisticalActiveNum = statisticalDao.getStatisticalActiveNum();//获取统计信息表中的当天的活跃度
+
     String thisMon= CommonUtil.getTime(true);
     List<LiveDataBean> liveData = statisticalDao.getStatisticalLiveData4User(thisMon.substring(0,thisMon.length()-2));
-    List<LiveDataBean> liveData4Num = statisticalDao.getStatisticalLiveData4Num(thisMon.substring(0,thisMon.length()-2));
+//    List<LiveDataBean> liveData4Num = statisticalDao.getStatisticalLiveData4Num(thisMon.substring(0,thisMon.length()-2));//无法统计每天活跃度
     List<String> dayList = new ArrayList<>();
     List<String> dayList4Num = new ArrayList<>();
     for (int i = 0; i <= 31; i++) {
         dayList.add(i,"0");
         dayList4Num.add(i,"0");
     }
-    Lg.e("得到daylist1111"+dayList.size(),dayList);
+//    Lg.e("得到daylist1111"+dayList.size(),dayList);
 
     /*活跃用户数*/
     for (int i = 0; i <= 32; i++) {
@@ -111,17 +112,17 @@
             }
         }
     }
-    /*活跃度*/
-    for (int i = 0; i <= 32; i++) {
-        for (int j = 0; j < liveData4Num.size(); j++) {
-            if (MathUtil.toInt(liveData4Num.get(j).LDay)==i){
-                Lg.e("替换"+i+"--"+liveData4Num.get(j).LNum);
-                dayList4Num.set(i-1,liveData4Num.get(j).LNum);
-            }
-        }
-    }
+//    /*活跃度*/
+//    for (int i = 0; i <= 32; i++) {
+//        for (int j = 0; j < liveData4Num.size(); j++) {
+//            if (MathUtil.toInt(liveData4Num.get(j).LDay)==i){
+//                Lg.e("替换"+i+"--"+liveData4Num.get(j).LNum);
+//                dayList4Num.set(i-1,liveData4Num.get(j).LNum);
+//            }
+//        }
+//    }
 
-        Lg.e("得到daylist"+dayList.size(),dayList);
+//        Lg.e("得到daylist"+dayList.size(),dayList);
 %>
 
 <%--<input type="button" class="btn btn-outline-primary"  value="刷新" onclick="window.location.reload();"/>--%>
@@ -144,7 +145,7 @@
 <hr/>
 
 
-<div id="container2" style="width:100%;height:400px"></div>
+<%--<div id="container2" style="width:100%;height:400px"></div>--%>
 <hr/>
 <div id="container" style="width:100%;height:400px"></div>
 <script>
@@ -209,68 +210,68 @@
         }
     });
 </script>
-<script>
-    // JS 代码
-    var chart = Highcharts.chart('container2', {
-        title: {
-            text: '当月活跃度情况'
-        },
-//        subtitle: {
-//            text: '数据来源：thesolarfoundation.com'
-//        },
-        yAxis: {
-            title: {
-                text: '活跃度(进入软件)'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 1
-            }
-        },
-        series: [{
-            name: '活跃度',
-            data: <%=dayList4Num%>
-//            data:[5, 10, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2]
-        }
-// , {
-//            name: '工人',
-//            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-//        }, {
-//            name: '销售',
-//            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-//        }, {
-//            name: '项目开发',
-//            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-//        }, {
-//            name: '其他',
-//            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-//        }
-        ],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
-    });
-</script>
+<%--<script>--%>
+    <%--// JS 代码--%>
+    <%--var chart = Highcharts.chart('container2', {--%>
+        <%--title: {--%>
+            <%--text: '当月活跃度情况'--%>
+        <%--},--%>
+<%--//        subtitle: {--%>
+<%--//            text: '数据来源：thesolarfoundation.com'--%>
+<%--//        },--%>
+        <%--yAxis: {--%>
+            <%--title: {--%>
+                <%--text: '活跃度(进入软件)'--%>
+            <%--}--%>
+        <%--},--%>
+        <%--legend: {--%>
+            <%--layout: 'vertical',--%>
+            <%--align: 'right',--%>
+            <%--verticalAlign: 'middle'--%>
+        <%--},--%>
+        <%--plotOptions: {--%>
+            <%--series: {--%>
+                <%--label: {--%>
+                    <%--connectorAllowed: false--%>
+                <%--},--%>
+                <%--pointStart: 1--%>
+            <%--}--%>
+        <%--},--%>
+        <%--series: [{--%>
+            <%--name: '活跃度',--%>
+            <%--data: <%=dayList4Num%>--%>
+<%--//            data:[5, 10, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2]--%>
+        <%--}--%>
+<%--// , {--%>
+<%--//            name: '工人',--%>
+<%--//            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]--%>
+<%--//        }, {--%>
+<%--//            name: '销售',--%>
+<%--//            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]--%>
+<%--//        }, {--%>
+<%--//            name: '项目开发',--%>
+<%--//            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]--%>
+<%--//        }, {--%>
+<%--//            name: '其他',--%>
+<%--//            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]--%>
+<%--//        }--%>
+        <%--],--%>
+        <%--responsive: {--%>
+            <%--rules: [{--%>
+                <%--condition: {--%>
+                    <%--maxWidth: 500--%>
+                <%--},--%>
+                <%--chartOptions: {--%>
+                    <%--legend: {--%>
+                        <%--layout: 'horizontal',--%>
+                        <%--align: 'center',--%>
+                        <%--verticalAlign: 'bottom'--%>
+                    <%--}--%>
+                <%--}--%>
+            <%--}]--%>
+        <%--}--%>
+    <%--});--%>
+<%--</script>--%>
 
 </body>
 

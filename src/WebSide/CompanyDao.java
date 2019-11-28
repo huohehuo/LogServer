@@ -91,6 +91,9 @@ public class CompanyDao {
 		}finally {
 			JDBCUtil.close(rs,sta,conn);
 		}
+		if (list.size()==0){
+			list.add(new Company("","","","","","","","","","","","","",""));
+		}
 		return list;
 	}
 
