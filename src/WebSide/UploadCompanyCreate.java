@@ -40,17 +40,22 @@ public class UploadCompanyCreate extends HttpServlet {
         Company company = new Company(company_name,app_version,app_version2,app_version3,kd_version,app_id,img_logo_url,phone,address,"",end_time,"0",create_time,user_max);
         Lg.e("得到添加公司",company);
         CompanyDao webDao = new CompanyDao();
-        //检查本地是否已存在相同的appid，有则中断添加
+        //检查本地是否已存在相同的appid，有则中断添加(总会有一个空的数据)
         List<Company> list2 = webDao.findCompany(app_id);
         if (list2.size()>0){
-            response.sendRedirect("errorHttp.jsp");
-        }else{
-            boolean ok = webDao.addCompany(company);
-            if (ok) {
-                response.sendRedirect("MGM/CompanyList.jsp");
-            } else {
+            Lg.e("检测是否存在appid",list2);
+            if ("".equals(list2.get(0).getAppID())){
+                boolean ok = webDao.addCompany(company);
+                if (ok) {
+                    response.sendRedirect("MGM/CompanyList.jsp");
+                } else {
+                    response.sendRedirect("errorHttp.jsp");
+                }
+            }else{
                 response.sendRedirect("errorHttp.jsp");
             }
+        }else{
+            response.sendRedirect("errorHttp.jsp");
         }
 
 
