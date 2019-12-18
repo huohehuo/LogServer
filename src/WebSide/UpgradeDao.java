@@ -70,6 +70,27 @@ public class UpgradeDao {
 		}
 		return num;
 	}
+	//获取版本信息表数量
+	public String getUpgradeTime(String id){
+		String name="";
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String SQL = "SELECT UpgradeTime AS 更新时间 FROM Tb_UpgradeBean WHERE AppID = '"+id+"'";
+			sta = conn.prepareStatement(SQL);
+			rs = sta.executeQuery();
+			while (rs.next()) {
+				name = rs.getString("更新时间");
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return name;
+	}
+
 
 	//获取版本信息
 	public List<UpgradeBean> findUpgradeBean(String appid){
@@ -220,6 +241,7 @@ public class UpgradeDao {
 			if (MathUtil.toD(num)<=0){
 				return;
 			}
+			//拼接原有的Log信息
 			StringBuilder builder = new StringBuilder();
 			builder.append(CommonUtil.getTimeLong(true))
 					.append("\n")
@@ -239,6 +261,9 @@ public class UpgradeDao {
 			JDBCUtil.close(rs,sta,conn);
 		}
 	}
+
+
+
 
 
 	public boolean deleteCompany(String appid){

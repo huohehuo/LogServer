@@ -13,6 +13,7 @@
 <%@ page import="Utils.BaseData" %>
 <%@ page import="Utils.ExcelExport" %>
 <%@ page import="org.apache.poi.hssf.usermodel.HSSFWorkbook" %>
+<%@ page import="WebSide.UpgradeDao" %>
 <html>
 <head>
     <title>注册用户管理</title>
@@ -58,14 +59,15 @@
                 <tr>
                     <th>公司名称</th>
                     <th>APP版本号</th>
-                    <th>AppID</th>
+                    <th>最近更新时间</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
-                    CompanyDao aa = new CompanyDao();
+                    CompanyDao companyDao = new CompanyDao();
+                    UpgradeDao upgradeDao = new UpgradeDao();
 //    List list = (List) request.getAttribute("pl_list");
-                    List list = aa.getCompany();
+                    List list = companyDao.getCompanyForUpgrade();
                     if (list==null){
                         %><div class="alert alert-info"> 列表数据为空</div><%
                         return;
@@ -77,7 +79,7 @@
                 <tr>
                     <td><%=rs.getCompanyName() %></td>
                     <td><%=rs.getAppVersion() %></td>
-                    <td><%=rs.getAppID() %></td>
+                    <td><%=upgradeDao.getUpgradeTime(rs.getAppID()) %></td>
                     <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
                         <td><a href="../company_find_4upgrade?json=<%=rs.getAppID()%>">管理</a></td>
                 </tr>

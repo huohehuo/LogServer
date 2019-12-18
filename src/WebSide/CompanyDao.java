@@ -51,6 +51,28 @@ public class CompanyDao {
 		}
 		return list;
 	}
+	//获取所有公司信息
+	public List<Company> getCompanyForUpgrade(){
+		List<Company> list = new ArrayList<>();
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String SQL = "SELECT * FROM Tb_Company A LEFT  JOIN Tb_UpgradeBean B on A.AppID=B.AppID ORDER BY  ifnull(B.UpgradeTime,'99999999') DESC ";
+			sta = conn.prepareStatement(SQL);
+			rs = sta.executeQuery();
+			while (rs.next()) {
+				list.add(backBean(rs));
+			}
+			Lg.e("得到公司列表",list);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return list;
+	}
+
 	//获取公司项目数量
 	public String getCompanyNum(){
 		String num="";
