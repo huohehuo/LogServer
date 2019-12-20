@@ -1,6 +1,7 @@
 package WebSide;
 
 import Bean.LiveDataBean;
+import Bean.RegisterCodeBean;
 import Bean.StatisticalBean;
 import Utils.CommonUtil;
 import Utils.JDBCUtil;
@@ -452,4 +453,103 @@ public class StatisticalDao {
 		bean.onActivity = rs.getString("onActivity");
 		return bean;
 	}
+	//统一获取表数据
+	private RegisterCodeBean backBeanForRC(ResultSet rs) throws SQLException{
+		RegisterCodeBean bean = new RegisterCodeBean();
+		bean.rid = rs.getInt("rid");
+		bean.CompanyName = rs.getString("CompanyName");
+		bean.address = rs.getString("address");
+		bean.register_code = rs.getString("register_code");
+		bean.imie = rs.getString("imie");
+		bean.AppID = rs.getString("AppID");
+		bean.register_time = rs.getString("register_time");
+		bean.note = rs.getString("note");
+		return bean;
+	}
+
+	//根据当天时间，查询出当天存在活跃用户的项目
+	public List<RegisterCodeBean> getRegisterCodeByData(String time){
+		List<RegisterCodeBean> list = new ArrayList<>();
+		try {
+			conn = JDBCUtil.getSQLite4Statistical();
+			String SQL = "SELECT *  FROM Tb_register where register_time= '"+time+"' GROUP BY rid";
+			Lg.e("获取活跃数据："+SQL);
+			sta = conn.prepareStatement(SQL);
+			rs = sta.executeQuery();
+			while (rs.next()) {
+				list.add(backBeanForRC(rs));
+			}
+			Lg.e("获取活跃数据",list);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return list;
+	}
+	//更新统计信息：目前只能更新当前appid和当前手机的用户；现阶段无法实现高并发，可研究Firebird
+	public synchronized boolean updataRegisterUser(RegisterCodeBean company){
+		try {
+			conn = JDBCUtil.getSQLite4Statistical();
+			String findSQL ="select * from Tb_register where AppID=?  and imie=? AND register_time=?";
+			sta = conn.prepareStatement(findSQL);
+			sta.setString(1,company.AppID);
+			sta.setString(2,company.imie);
+			sta.setString(3,company.register_time);
+			rs = sta.executeQuery();
+			int num=0;
+			while (rs.next()) {
+				num++;
+			}
+			Lg.e("需要修改的版本信息："+num);
+			//若本地无该公司的版本信息，则新增
+			if (num<=0){
+				String SQL = "INSERT INTO Tb_register (CompanyName,AppID,imie," +
+						"phone,address,note,register_time,register_code) VALUES (?,?,?,?,?,?,?,?)";
+				sta = conn.prepareStatement(SQL);
+				sta.setString(1,company.CompanyName);
+				sta.setString(2,company.AppID);
+				sta.setString(3,company.imie);
+				sta.setString(4,company.phone);
+				sta.setString(5,company.address);
+				sta.setString(6,company.note);
+				sta.setString(7,company.register_time);
+				sta.setString(8,company.register_code);
+				int i = sta.executeUpdate();
+				if(i>0){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				String SQL = "UPDATE Tb_register set note=? WHERE AppID=? AND imie = ? AND register_time=?";
+//				Lg.e("更新数据库语句"+SQL);
+				sta = conn.prepareStatement(SQL);
+				sta.setString(1,company.note);
+				sta.setString(2,company.AppID);
+				sta.setString(3,company.imie);
+				sta.setString(4,company.register_time);
+				int i = sta.executeUpdate();
+				if(i>0){
+					return true;
+				}else{
+//					JDBCUtil.close(rs,sta,conn);
+					return false;
+				}
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+//			JDBCUtil.close(rs,sta,conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+//			JDBCUtil.close(rs,sta,conn);
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return false;
+	}
+
 }

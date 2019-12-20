@@ -38,6 +38,8 @@
     <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
     <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
 
+
+
 </head>
 <style type="text/css">
     .cardBox {

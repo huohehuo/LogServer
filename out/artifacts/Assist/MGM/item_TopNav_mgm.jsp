@@ -26,6 +26,8 @@
     <link type="text/javascript" src="js/swiper.min.js">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/colors.css">
+
+    <link rel="stylesheet" href="../css/style.css">
     <style type="text/css">
         img{
             padding: 15px;

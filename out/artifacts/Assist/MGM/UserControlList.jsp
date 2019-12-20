@@ -15,7 +15,10 @@
 <%@ page import="org.apache.poi.hssf.usermodel.HSSFWorkbook" %>
 <%@ page import="WebSide.UserControlDao" %>
 <%@ page import="Bean.TestB" %>
+<%@ page import="WebSide.StatisticalDao" %>
 <%@ page import="com.google.gson.Gson" %>
+<%@ page import="Utils.CommonUtil" %>
+<%@ page import="Bean.RegisterCodeBean" %>
 <html>
 <head>
     <title>注册用户管理</title>
@@ -52,7 +55,115 @@
 <%--<%
     String tips = (String) request.getAttribute("tips");
 %>
+
 <h5 ><%=tips%></h5>--%>
+<div>
+    <br/>
+    <h2 style="width: 200px;text-align:center">用户控制-></h2>
+</div>
+<hr/>
+    <form action="../ActiveRegisterCode" method="post" style="padding-left: 20px">
+        <h4 >PDA注册:</h4>
+        <div class="form-inline">
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">IP地址:</a>
+                <input type="text" class="form-control" id="wrt_ip" placeholder="Enter telephone" name="wrt_ip" href="fff"
+                       value="192.168.0.103" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">端口:</a>
+                <input type="text" class="form-control" id="wrt_port" placeholder="Enter telephone" name="wrt_port"
+                       value="8081" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">注册码:</a>
+                <input type="text" class="form-control" id="wrt_register_code" placeholder="Enter telephone"
+                       name="wrt_register_code"
+                       value="cc6ace5a59d39f08" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px"></a>
+                <button type="submit" class="btn btn-primary form-control">确认注册</button>
+            </div>
+        </div>
+    </form>
+<hr/>
+<form action="../ActiveUseTime" method="post" style="padding-left: 20px">
+    <h4 >时间控制:</h4>
+    <div class="form-inline" style="margin-bottom: 10px">
+        <div class="form-group" style="width: 25%">
+            <a style="margin-right: 20px">IP地址:</a>
+            <input type="text" class="form-control" id="time_ip" placeholder="Enter telephone" name="time_ip" href="fff"
+                   value="192.168.0.103" style="width: 100%;margin-right: 10px">
+        </div>
+        <div class="form-group" style="width: 25%">
+            <a style="margin-right: 20px">端口:</a>
+            <input type="text" class="form-control" id="time_port" placeholder="Enter telephone" name="time_port"
+                   value="8081" style="width: 100%;margin-right: 10px">
+        </div>
+        <div class="form-group" style="width: 25%">
+            <a style="margin-right: 20px">终止日期(时间格式为：年月日组合的八位数：20190101):</a>
+            <input type="text" class="form-control" id="time_end" placeholder="Enter telephone"
+                   name="time_end"
+                   value="20190101" style="width: 100%;margin-right: 10px">
+        </div>
+        <div class="form-group" style="width: 25%">
+            <a style="margin-right: 20px"></a>
+            <button type="submit" class="btn btn-primary form-control">确认</button>
+        </div>
+    </div>
+</form>
+<hr/>
+
+<div  class="card" style="margin: 10px">
+
+    <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+            <%
+                StatisticalDao statisticalDao = new StatisticalDao();
+            %>
+            <tr>
+                <th>公司名称</th>
+                <th>APPID</th>
+                <th>备注</th>
+                <th>注册码</th>
+                <th>请求时间</th>
+                <%--<th>时间控制日期</th>--%>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                //    List list = (List) request.getAttribute("pl_list");
+                List stsList = statisticalDao.getRegisterCodeByData(CommonUtil.getTime(false));
+                if (stsList==null){
+            %><div class="alert alert-info"> 列表数据为空</div><%
+                    return;
+                }
+                for (int i = 0; i < stsList.size(); i++) {
+                    RegisterCodeBean rs = (RegisterCodeBean) stsList.get(i);
+            %>
+
+            <tr>
+                <td><%=rs.getCompanyName() %></td>
+                <td><%=rs.getAppID() %></td>
+                <td><%=rs.getNote() %></td>
+                <td><%=rs.getRegister_code() %></td>
+                <td><%=rs.getTime() %></td>
+                <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
+                <%--<td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>--%>
+                <%--<td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>--%>
+            </tr>
+            </tbody>
+            <%} %>
+        </table>
+    </div>
+
+</div>
+
+
+
 <div id="example-4">
     <input type="radio" id="one" value="One" v-model="picked">
     <label for="one">One</label>
@@ -62,18 +173,116 @@
     <br>
     <span>Picked: {{ picked }}</span>
 </div>
+<div id="testVue">
+    <div class="form-group" style="width: 25%">
+        <p>{{ testTxt }}</p>
+        <a style="margin-right: 20px" v-model="testTxtC">Vue测试:</a>
+        <input type="text" class="form-control" id="vues" placeholder="Enter telephone"
+               name="time_end"
+               v-model="testTxt"
+               value="20190101" style="width: 100%;margin-right: 10px">
+    </div>
+    <div class="form-group" style="width: 25%">
+        <a style="margin-right: 20px"></a>
+        <button  class="btn btn-primary form-control" v-on:click="toRst('')">确认</button>
+    </div>
+</div>
 <script>
     new Vue({
         el: '#example-4',
         data: {
-            picked: ''
+            picked: 'ddd'
         }
     })
+
+    var ddddd = new Vue({
+        el: '#testVue',
+        data: {
+            testTxt: '',
+            testTxtC: ''
+        },
+        toRst: function (str) {
+            axios.get('http://192.168.0.103:8085/Assist/RegisterCode?json='+this.testTxt)
+                .then(function (response) {
+                    console.log(response);
+                    vm.testTxtC = _.capitalize(response)
+//                        vm.answer = _.capitalize(response.data.answer)
+                })
+                .catch(function (error) {
+                    console.log(error);
+//                        vm.answer = error
+                    vm.testTxtC = 'Error! Could not reach the API. ' + error
+                })
+        },
+
+        watch: {
+            // 如果 `question` 发生改变，这个函数就会运行
+            testTxt: function (newQuestion, oldQuestion) {
+                this.testTxtC = '变化中...'
+//                this.debouncedGetAnswer()
+            }
+        },
+        created: function () {
+            // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+            // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+            // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+            // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+            // 请参考：https://lodash.com/docs#debounce
+            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+        },
+        methods: {
+            getAnswer: function () {
+//                if (this.question.indexOf('?') === -1) {
+//                    this.answer = 'Questions usually contain a question mark. ;-)'
+//                    return
+//                }
+                this.testTxtC = 'Thinking...'
+                var vm = this
+//                axios.get('http://148.70.108.65:8080/LogAssist/UserIO')
+                axios.get('http://192.168.0.103:8085/Assist/RegisterCode?json=12313221')
+                    .then(function (response) {
+                        console.log(response);
+                        vm.testTxtC = _.capitalize(response)
+//                        vm.answer = _.capitalize(response.data.answer)
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+//                        vm.answer = error
+                        vm.testTxtC = 'Error! Could not reach the API. ' + error
+                    })
+            }
+        }
+    })
+
+    function toRegister() {
+        var url;
+        							console.log("111");
+        var ip2 = document.getElementById("wrt_ip").innerText;
+        							console.log("111");
+        var port2 = document.getElementById("wrt_port").innerText;
+        							console.log("111");
+        var one = document.getElementById("wrt_register_code").innerText;
+        var theone = one + "fzkj601";
+        var addpwd = $.md5(theone);
+        var cat = addpwd.substring(8, 24);
+        var addpwd2 = $.md5(cat);
+        var cat2 = addpwd2.substring(8, 24);
+        url = "http://" + ip2 + ":" + port2 + "/Assist/RegisterCode" + "?json=" + cat2;
+        							console.log(url);
+        //							document.getElementById("changeurl").href = url;
+        //				document.getElementById("theurl").innerHTML = url;
+        //document.getElementById("tvcode").value = url;
+        // window.location.href=url;
+        window.open(url, top);
+        //				mui.ajax(url,null);
+        //											loadXMLDoc(url);
+
+    }
 
 </script>
 
 <%
-//    List list = (List) request.getAttribute("pl_list");
+    //    List list = (List) request.getAttribute("pl_list");
     CompanyDao aa = new CompanyDao();
     List list = aa.getCompany();
     List<TestB> testBS = new ArrayList<>();
@@ -85,7 +294,8 @@
 //    strings[4]="{ text: 'One4', value: 'D' }";
 //    strings[5]="{ text: 'One5', value: 'E' }";
 %>
-<p><%=testBS%></p>
+<p><%=testBS%>
+</p>
 <div>
     <br/>
     <h2 style="width: 200px;text-align:center">用户控制-></h2>
@@ -96,10 +306,11 @@
         <%
             for (int i = 0; i < list.size(); i++) {
                 Company rs = (Company) list.get(i);
-                testBS.add(new TestB(rs.getCompanyName(),rs.getAppID()));
+                testBS.add(new TestB(rs.getCompanyName(), rs.getAppID()));
 
         %>
-        <option><%=rs.getCompanyName()%></option>
+        <option><%=rs.getCompanyName()%>
+        </option>
         <%
             }
             String res = new Gson().toJson(testBS);
@@ -125,7 +336,6 @@
     <button v-on:click="reverseMessage">反转消息</button>
     <button v-on:click="toSet('')">修改消息</button>
 </div>
-
 
 
 <div id="watch-example">
@@ -180,14 +390,14 @@
             }
         }
     })
-    var slel =new Vue({
+    var slel = new Vue({
         el: '#example-5',
         data: {
             selected: ''
         }
     })
 
-    var test =  new Vue({
+    var test = new Vue({
         el: '#app-5',
         data: {
             message: 'Hello Vue.js!'
@@ -197,12 +407,12 @@
                 this.message = this.message.split('').reverse().join('')
             },
             toSet: function (str) {
-                this.message =document.getElementById("getSelectData").innerText
+                this.message = document.getElementById("getSelectData").innerText
             }
         }
     })
 
-    var dle =new Vue({
+    var dle = new Vue({
         el: '#select2',
         data: {
             selected: 'A',
@@ -217,9 +427,6 @@
     })
 
 </script>
-
-
-
 
 
 <!--video用于显示媒体设备的视频流，自动播放-->

@@ -28,6 +28,9 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+
+
 </head>
 <style type="text/css">
     .cardBox {
@@ -57,6 +60,7 @@
     }
 </style>
 <body>
+
 <jsp:include page="../headLayout.jsp"/>
 
 <%

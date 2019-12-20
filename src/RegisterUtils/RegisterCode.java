@@ -2,6 +2,7 @@ package RegisterUtils;
 
 import Utils.CommonJson;
 import Utils.JDBCUtil;
+import Utils.Lg;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
 public class RegisterCode extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
+        Lg.e("进入：RegisterCode");
         Connection conn = null;
         PreparedStatement sta = null;
         String paramter = request.getParameter("json");
