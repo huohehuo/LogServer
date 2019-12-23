@@ -147,6 +147,9 @@ public class MathUtil {
     public static double D2save1(Double d){
         return Double.parseDouble(String.format("%.1f", d));
     }
+    public static String D2saveInt(Double d){
+        return Cut0(Math.round(d)+"");
+    }
 
     public static double D2save0(Double d){
         return Double.parseDouble(String.format("%f", d));

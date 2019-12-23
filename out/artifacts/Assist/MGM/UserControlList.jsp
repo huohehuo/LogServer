@@ -67,23 +67,23 @@
         <div class="form-inline">
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">IP地址:</a>
-                <input type="text" class="form-control" id="wrt_ip" placeholder="Enter telephone" name="wrt_ip" href="fff"
+                <input type="text" class="form-control" id="wrt_ip" placeholder="Enter telephone" name="wrt_ip" href="fff" v-model="T_ip"
                        value="192.168.0.103" style="width: 100%;margin-right: 10px">
             </div>
             <div class="form-group" style="width: 25%">
-                <a style="margin-right: 20px">端口:</a>
-                <input type="text" class="form-control" id="wrt_port" placeholder="Enter telephone" name="wrt_port"
+                <a style="margin-right: 20px" v-model="T_tip">端口:</a>
+                <input type="text" class="form-control" id="wrt_port" placeholder="Enter telephone" name="wrt_port" v-model="T_port"
                        value="8081" style="width: 100%;margin-right: 10px">
             </div>
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">注册码:</a>
-                <input type="text" class="form-control" id="wrt_register_code" placeholder="Enter telephone"
+                <input type="text" class="form-control" id="wrt_register_code" placeholder="Enter telephone" v-model="T_code"
                        name="wrt_register_code"
                        value="cc6ace5a59d39f08" style="width: 100%;margin-right: 10px">
             </div>
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px"></a>
-                <button type="submit" class="btn btn-primary form-control">确认注册</button>
+                <button type="submit" class="btn btn-primary form-control"  v-on:click="toRgist('')">确认注册</button>
             </div>
         </div>
     </form>
@@ -109,12 +109,13 @@
         </div>
         <div class="form-group" style="width: 25%">
             <a style="margin-right: 20px"></a>
-            <button type="submit" class="btn btn-primary form-control">确认</button>
+            <button type="submit" class="btn btn-primary form-control">确认修改</button>
         </div>
     </div>
 </form>
 <hr/>
 
+<%--当日请求注册的公司数据--%>
 <div  class="card" style="margin: 10px">
 
     <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>
@@ -162,84 +163,35 @@
 
 </div>
 
-
-
-<div id="example-4">
-    <input type="radio" id="one" value="One" v-model="picked">
-    <label for="one">One</label>
-    <br>
-    <input type="radio" id="two" value="Two" v-model="picked">
-    <label for="two">Two</label>
-    <br>
-    <span>Picked: {{ picked }}</span>
-</div>
-<div id="testVue">
-    <div class="form-group" style="width: 25%">
-        <p>{{ testTxt }}</p>
-        <a style="margin-right: 20px" v-model="testTxtC">Vue测试:</a>
-        <input type="text" class="form-control" id="vues" placeholder="Enter telephone"
-               name="time_end"
-               v-model="testTxt"
-               value="20190101" style="width: 100%;margin-right: 10px">
-    </div>
-    <div class="form-group" style="width: 25%">
-        <a style="margin-right: 20px"></a>
-        <button  class="btn btn-primary form-control" v-on:click="toRst('')">确认</button>
-    </div>
-</div>
 <script>
-    new Vue({
-        el: '#example-4',
-        data: {
-            picked: 'ddd'
-        }
-    })
+var ss = new Vue({
+    el:'rgstVue',
+    data:{
+        T_tip:'',
+        T_ip:'',
+        T_port:'',
+        T_code:''
+    },
+    watch:{
+        T_port:function (newQuestion, oldQuestion) {
+            this.T_tip = 'bianhua'
+//            this.T_tip = this.T_ip+':'+T_port+'/'+T_code,
+//            if(this.Tip.length>4){
+//                this.T_tip = '端口：不能超过四位'
+//            }else{
+//                this.T_tip = '端口：'
+//            }
+        },
+        methods:{
+            toRgist:function (str) {
+                var theone = this.T_code + 'fzkj601';
+                var addpwd = $.md5(theone);
+                var cat = addpwd.substring(8, 24);
+                var addpwd2 = $.md5(cat);
+                var cat2 = addpwd2.substring(8, 24);
+//                url = "http://" + ip2 + ":" + port2 + "/Assist/RegisterCode" + "?json=" + cat2;
 
-    var ddddd = new Vue({
-        el: '#testVue',
-        data: {
-            testTxt: '',
-            testTxtC: ''
-        },
-        toRst: function (str) {
-            axios.get('http://192.168.0.103:8085/Assist/RegisterCode?json='+this.testTxt)
-                .then(function (response) {
-                    console.log(response);
-                    vm.testTxtC = _.capitalize(response)
-//                        vm.answer = _.capitalize(response.data.answer)
-                })
-                .catch(function (error) {
-                    console.log(error);
-//                        vm.answer = error
-                    vm.testTxtC = 'Error! Could not reach the API. ' + error
-                })
-        },
-
-        watch: {
-            // 如果 `question` 发生改变，这个函数就会运行
-            testTxt: function (newQuestion, oldQuestion) {
-                this.testTxtC = '变化中...'
-//                this.debouncedGetAnswer()
-            }
-        },
-        created: function () {
-            // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
-            // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
-            // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
-            // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
-            // 请参考：https://lodash.com/docs#debounce
-            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
-        },
-        methods: {
-            getAnswer: function () {
-//                if (this.question.indexOf('?') === -1) {
-//                    this.answer = 'Questions usually contain a question mark. ;-)'
-//                    return
-//                }
-                this.testTxtC = 'Thinking...'
-                var vm = this
-//                axios.get('http://148.70.108.65:8080/LogAssist/UserIO')
-                axios.get('http://192.168.0.103:8085/Assist/RegisterCode?json=12313221')
+                axios.get('http://'+this.T_ip+':'+this.T_port+'/Assist/RegisterCode?json='+cat2)
                     .then(function (response) {
                         console.log(response);
                         vm.testTxtC = _.capitalize(response)
@@ -250,9 +202,11 @@
 //                        vm.answer = error
                         vm.testTxtC = 'Error! Could not reach the API. ' + error
                     })
+
             }
         }
-    })
+    }
+});
 
     function toRegister() {
         var url;
@@ -281,7 +235,7 @@
 
 </script>
 
-<%
+<%--<%
     //    List list = (List) request.getAttribute("pl_list");
     CompanyDao aa = new CompanyDao();
     List list = aa.getCompany();
@@ -293,58 +247,52 @@
 //    strings[3]="";
 //    strings[4]="{ text: 'One4', value: 'D' }";
 //    strings[5]="{ text: 'One5', value: 'E' }";
-%>
-<p><%=testBS%>
-</p>
-<div>
-    <br/>
-    <h2 style="width: 200px;text-align:center">用户控制-></h2>
-</div>
-<div id="example-5">
-    <select v-model="selected">
-        <option disabled value="">请选择</option>
-        <%
-            for (int i = 0; i < list.size(); i++) {
-                Company rs = (Company) list.get(i);
-                testBS.add(new TestB(rs.getCompanyName(), rs.getAppID()));
+%>--%>
+<%--<div id="example-5">--%>
+    <%--<select v-model="selected">--%>
+        <%--<option disabled value="">请选择</option>--%>
+        <%--<%--%>
+            <%--for (int i = 0; i < list.size(); i++) {--%>
+                <%--Company rs = (Company) list.get(i);--%>
+                <%--testBS.add(new TestB(rs.getCompanyName(), rs.getAppID()));--%>
 
-        %>
-        <option><%=rs.getCompanyName()%>
-        </option>
-        <%
-            }
-            String res = new Gson().toJson(testBS);
-        %>
-    </select>
-    <span id="getSelectData">Selected: {{ selected }}</span>
-</div>
+        <%--%>--%>
+        <%--<option><%=rs.getCompanyName()%>--%>
+        <%--</option>--%>
+        <%--<%--%>
+            <%--}--%>
+            <%--String res = new Gson().toJson(testBS);--%>
+        <%--%>--%>
+    <%--</select>--%>
+    <%--<span id="getSelectData">Selected: {{ selected }}</span>--%>
+<%--</div>--%>
 <br/>
 
-<div id="select2">
-    <select v-model="selected">
-        <option v-for="option in options" v-bind:value="option.value">
-            {{ option.text }}
-        </option>
-    </select>
-    <span>Selected: {{ selected }}</span>
-</div>
-<br/>
+<%--<div id="select2">--%>
+    <%--<select v-model="selected">--%>
+        <%--<option v-for="option in options" v-bind:value="option.value">--%>
+            <%--{{ option.text }}--%>
+        <%--</option>--%>
+    <%--</select>--%>
+    <%--<span>Selected: {{ selected }}</span>--%>
+<%--</div>--%>
+<%--<br/>--%>
 
 
-<div id="app-5">
-    <p>{{ message }}</p>
-    <button v-on:click="reverseMessage">反转消息</button>
-    <button v-on:click="toSet('')">修改消息</button>
-</div>
+<%--<div id="app-5">--%>
+    <%--<p>{{ message }}</p>--%>
+    <%--<button v-on:click="reverseMessage">反转消息</button>--%>
+    <%--<button v-on:click="toSet('')">修改消息</button>--%>
+<%--</div>--%>
 
 
-<div id="watch-example">
-    <p>
-        Ask a yes/no question:
-        <input v-model="question">
-    </p>
-    <p>{{ answer }}</p>
-</div>
+<%--<div id="watch-example">--%>
+    <%--<p>--%>
+        <%--Ask a yes/no question:--%>
+        <%--<input v-model="question">--%>
+    <%--</p>--%>
+    <%--<p>{{ answer }}</p>--%>
+<%--</div>--%>
 <script>
     var watchExampleVM = new Vue({
         el: '#watch-example',
@@ -416,7 +364,7 @@
         el: '#select2',
         data: {
             selected: 'A',
-            options: <%=res%>
+            <%--options: <%=res%>--%>
 //            options: [{"text":"one","value":"A"},{"text":"one2","value":"B"},{"text":"one3","value":"C"}]
 //            options: [
 //                { text: 'One', value: 'A' },
@@ -428,89 +376,6 @@
 
 </script>
 
-
-<!--video用于显示媒体设备的视频流，自动播放-->
-<video id="video" autoplay style="width: 480px;height: 320px"></video>
-<!--拍照按钮-->
-<div>
-    <button id="capture">拍照</button>
-</div>
-<!--描绘video截图-->
-<canvas id="canvas" width="480" height="320"></canvas>
-
-
-<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
-<script>
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var video = document.getElementById('video');
-
-    // Trigger photo take
-    document.getElementById("snap").addEventListener("click", function () {
-        context.drawImage(video, 0, 0, 640, 480);
-    });
-
-    // Get access to the camera!
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        // Not adding `{ audio: true }` since we only want video now
-        navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {
-            video.src = window.URL.createObjectURL(stream);
-            video.play();
-        });
-    }
-
-    //访问用户媒体设备的兼容方法
-    function getUserMedia(constrains, success, error) {
-        if (navigator.mediaDevices.getUserMedia) {
-            //最新标准API
-            navigator.mediaDevices.getUserMedia(constrains).then(success).catch(error);
-        } else if (navigator.webkitGetUserMedia) {
-            //webkit内核浏览器
-            navigator.webkitGetUserMedia(constrains).then(success).catch(error);
-        } else if (navigator.mozGetUserMedia) {
-            //Firefox浏览器
-            navagator.mozGetUserMedia(constrains).then(success).catch(error);
-        } else if (navigator.getUserMedia) {
-            //旧版API
-            navigator.getUserMedia(constrains).then(success).catch(error);
-        }
-    }
-
-    var video = document.getElementById("video");
-    var canvas = document.getElementById("canvas");
-    var context = canvas.getContext("2d");
-
-    //成功的回调函数
-    function success(stream) {
-        //兼容webkit内核浏览器
-        var CompatibleURL = window.URL || window.webkitURL;
-        //将视频流设置为video元素的源
-        video.src = CompatibleURL.createObjectURL(stream);
-        //播放视频
-        video.play();
-    }
-
-    //异常的回调函数
-    function error(error) {
-        console.log("访问用户媒体设备失败：", error.name, error.message);
-    }
-    if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
-        //调用用户媒体设备，访问摄像头
-        getUserMedia({
-            video: {width: 480, height: 320}
-        }, success, error);
-    } else {
-        alert("你的浏览器不支持访问用户媒体设备");
-    }
-
-    //注册拍照按钮的单击事件
-    document.getElementById("capture").addEventListener("click", function () {
-        //绘制画面
-        context.drawImage(video, 0, 0, 480, 320);
-    });
-</script>
 <hr/>
 
 

@@ -140,7 +140,7 @@
                 <h3>今日活跃人数:  <%=statisticalLiveUserNum%></h3>
             </div>
             <div class="statiscard card" onclick="location.href='ActiveUserList.jsp'">
-                <h3>今日活跃度:  <%=statisticalActiveNum%></h3>
+                <h3>占比:  <%=MathUtil.D2saveInt(MathUtil.toD(statisticalActiveNum)/MathUtil.toD(statisticalNum)*100)+"%"%></h3>
             </div>
         </div>
 </div>
