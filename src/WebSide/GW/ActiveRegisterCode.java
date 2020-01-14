@@ -1,10 +1,7 @@
 package WebSide.GW;
 
-import Bean.CommonResponse;
-import Utils.HttpRequestUtils;
 import Utils.Lg;
 import Utils.MD5;
-import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,28 +26,28 @@ public class ActiveRegisterCode extends HttpServlet {
         String newRegister = MD5.getMD5(register_code);
         String lastRegister = MD5.getMD5(newRegister);
         String url = "http://" + wrt_ip + ":" + wrt_port + "/Assist/RegisterCode?json=" + lastRegister;
-        Lg.e("网址", url);
-//        response.sendRedirect(url);
-        String getJson = HttpRequestUtils.sendGet(url);
-        Lg.e("得到数据",getJson);
-        if ("".equals(getJson)){
-            request.setAttribute("feedback_ok", "no");
-            request.setAttribute("feedback", "注册失败，地址连接失败...");
-            request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-        }else{
-            CommonResponse commonResponse = new Gson().fromJson(getJson, CommonResponse.class);
-            if (commonResponse.state){
-                Lg.e("注册成功");
-                request.setAttribute("feedback_ok", "ok");
-                request.setAttribute("feedback", "注册成功!点击返回继续");
-                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-            }else{
-                request.setAttribute("feedback_ok", "no");
-                request.setAttribute("feedback", "注册失败");
-                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-                Lg.e("注册失败");
-            }
-        }
+        Lg.e("网址:"+url);
+        response.sendRedirect(url);
+//        String getJson = HttpRequestUtils.sendGet(url);
+//        Lg.e("得到数据",getJson);
+//        if ("".equals(getJson)){
+//            request.setAttribute("feedback_ok", "no");
+//            request.setAttribute("feedback", "注册失败，地址连接失败...");
+//            request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//        }else{
+//            CommonResponse commonResponse = new Gson().fromJson(getJson, CommonResponse.class);
+//            if (commonResponse.state){
+//                Lg.e("注册成功");
+//                request.setAttribute("feedback_ok", "ok");
+//                request.setAttribute("feedback", "注册成功!点击返回继续");
+//                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//            }else{
+//                request.setAttribute("feedback_ok", "no");
+//                request.setAttribute("feedback", "注册失败");
+//                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//                Lg.e("注册失败");
+//            }
+//        }
 
     }
 

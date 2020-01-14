@@ -1,10 +1,7 @@
 package WebSide.GW;
 
-import Bean.CommonResponse;
 import Utils.BaseData;
-import Utils.HttpRequestUtils;
 import Utils.Lg;
-import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,6 +40,7 @@ public class ActiveUseTime extends HttpServlet {
         String[] timethis=str.split("");
         Lg.e("时间",str);
         Lg.e("得到timethis{}",timethis);
+        //时间规则
         for (int i = 0; i < 13; i++) {
             result=result+timethis[i];
             if(i==Integer.valueOf(key[0])){
@@ -76,26 +74,27 @@ public class ActiveUseTime extends HttpServlet {
         //125071697308120801133
         String url = "http://" + wrt_ip + ":" + wrt_port + "/Assist/SetUseTimeForPC" + "?json=" + result;
         Lg.e("网址", url);
-        String getJson = HttpRequestUtils.sendGet(url);
-        Lg.e("得到数据",getJson);
-        if ("".equals(getJson)){
-            request.setAttribute("feedback_ok", "no");
-            request.setAttribute("feedback", "时间控制写入失败---地址连接失败...");
-            request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-        }else{
-            CommonResponse commonResponse = new Gson().fromJson(getJson, CommonResponse.class);
-            if (commonResponse.state){
-                Lg.e("注册成功");
-                request.setAttribute("feedback_ok", "ok");
-                request.setAttribute("feedback", "时间控制写入成功!     点击返回继续");
-                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-            }else{
-                request.setAttribute("feedback_ok", "no");
-                request.setAttribute("feedback", "时间控制写入失败");
-                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
-                Lg.e("注册失败");
-            }
-        }
+        response.sendRedirect(url);
+//        String getJson = HttpRequestUtils.sendGet(url);
+//        Lg.e("得到数据",getJson);
+//        if ("".equals(getJson)){
+//            request.setAttribute("feedback_ok", "no");
+//            request.setAttribute("feedback", "时间控制写入失败---地址连接失败...");
+//            request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//        }else{
+//            CommonResponse commonResponse = new Gson().fromJson(getJson, CommonResponse.class);
+//            if (commonResponse.state){
+//                Lg.e("注册成功");
+//                request.setAttribute("feedback_ok", "ok");
+//                request.setAttribute("feedback", "时间控制写入成功!     点击返回继续");
+//                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//            }else{
+//                request.setAttribute("feedback_ok", "no");
+//                request.setAttribute("feedback", "时间控制写入失败");
+//                request.getRequestDispatcher("MGM/feedBack/ok_register.jsp").forward(request, response);
+//                Lg.e("注册失败");
+//            }
+//        }
 
     }
 

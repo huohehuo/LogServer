@@ -34,6 +34,7 @@
     <%--<link rel="stylesheet" href="css/bootstrap.min.css">--%>
     <%--<link rel="stylesheet" href="../js/vue.min.js">--%>
     <%--<link rel="stylesheet" href="../js/vue.min.js" />--%>
+    <script src="../js/jquery.js"></script>
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
@@ -59,11 +60,14 @@
 <h5 ><%=tips%></h5>--%>
 <div>
     <br/>
-    <h2 style="width: 200px;text-align:center">用户控制-></h2>
+    <h2 style="width: 200px;text-align:center">用户控制->
+        </h2>
 </div>
-<hr/>
+
+<div>
+    <hr/>
     <form action="../ActiveRegisterCode" method="post" style="padding-left: 20px">
-        <h4 >PDA注册:</h4>
+        <h4 >PDA注册:</h4><a style="margin-right: 20px" href="http://148.70.108.65:8080/fangzuo/ui/Setting.html" target="_blank">(或者进入注册页面)</a>
         <div class="form-inline">
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">IP地址:</a>
@@ -87,81 +91,93 @@
             </div>
         </div>
     </form>
-<hr/>
-<form action="../ActiveUseTime" method="post" style="padding-left: 20px">
-    <h4 >时间控制:</h4>
-    <div class="form-inline" style="margin-bottom: 10px">
-        <div class="form-group" style="width: 25%">
-            <a style="margin-right: 20px">IP地址:</a>
-            <input type="text" class="form-control" id="time_ip" placeholder="Enter telephone" name="time_ip" href="fff"
-                   value="192.168.0.103" style="width: 100%;margin-right: 10px">
+    <hr/>
+    <form action="../ActiveUseTime" method="post" style="padding-left: 20px">
+        <h4 >时间控制:</h4>
+        <div class="form-inline" style="margin-bottom: 10px">
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">IP地址:</a>
+                <input type="text" class="form-control" id="time_ip" placeholder="Enter telephone" name="time_ip" href="fff"
+                       value="192.168.0.103" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">端口:</a>
+                <input type="text" class="form-control" id="time_port" placeholder="Enter telephone" name="time_port"
+                       value="8081" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px">终止日期(时间格式为：年月日组合的八位数：20190101):</a>
+                <input type="text" class="form-control" id="time_end" placeholder="Enter telephone"
+                       name="time_end"
+                       value="20190101" style="width: 100%;margin-right: 10px">
+            </div>
+            <div class="form-group" style="width: 25%">
+                <a style="margin-right: 20px"></a>
+                <button type="submit" class="btn btn-primary form-control">确认修改</button>
+            </div>
         </div>
-        <div class="form-group" style="width: 25%">
-            <a style="margin-right: 20px">端口:</a>
-            <input type="text" class="form-control" id="time_port" placeholder="Enter telephone" name="time_port"
-                   value="8081" style="width: 100%;margin-right: 10px">
+    </form>
+    <hr/>
+</div>
+
+
+<%--<div style="width: 100%">--%>
+    <div  class="card" style="margin: 10px">
+
+        <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <%
+                    StatisticalDao statisticalDao = new StatisticalDao();
+                %>
+                <tr>
+                    <th>公司名称</th>
+                    <th>APPID</th>
+                    <th>备注</th>
+                    <th>注册码</th>
+                    <th>请求时间</th>
+                    <%--<th>时间控制日期</th>--%>
+                </tr>
+                </thead>
+                <tbody>
+                <%
+                    //    List list = (List) request.getAttribute("pl_list");
+                    List stsList = statisticalDao.getRegisterCodeByData(CommonUtil.getTime(false));
+                    if (stsList==null){
+                %><div class="alert alert-info"> 列表数据为空</div><%
+                        return;
+                    }
+                    for (int i = 0; i < stsList.size(); i++) {
+                        RegisterCodeBean rs = (RegisterCodeBean) stsList.get(i);
+                %>
+
+                <tr>
+                    <td><%=rs.getCompanyName() %></td>
+                    <td><%=rs.getAppID() %></td>
+                    <td><%=rs.getNote() %></td>
+                    <td><%=rs.getRegister_code() %></td>
+                    <td><%=rs.getTime() %></td>
+                    <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
+                    <%--<td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>--%>
+                    <%--<td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>--%>
+                </tr>
+                </tbody>
+                <%} %>
+            </table>
         </div>
-        <div class="form-group" style="width: 25%">
-            <a style="margin-right: 20px">终止日期(时间格式为：年月日组合的八位数：20190101):</a>
-            <input type="text" class="form-control" id="time_end" placeholder="Enter telephone"
-                   name="time_end"
-                   value="20190101" style="width: 100%;margin-right: 10px">
-        </div>
-        <div class="form-group" style="width: 25%">
-            <a style="margin-right: 20px"></a>
-            <button type="submit" class="btn btn-primary form-control">确认修改</button>
-        </div>
+
     </div>
-</form>
-<hr/>
-
-<%--当日请求注册的公司数据--%>
-<div  class="card" style="margin: 10px">
-
-    <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>
-    <div class="card-body">
-        <table class="table">
-            <thead>
-            <%
-                StatisticalDao statisticalDao = new StatisticalDao();
-            %>
-            <tr>
-                <th>公司名称</th>
-                <th>APPID</th>
-                <th>备注</th>
-                <th>注册码</th>
-                <th>请求时间</th>
-                <%--<th>时间控制日期</th>--%>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-                //    List list = (List) request.getAttribute("pl_list");
-                List stsList = statisticalDao.getRegisterCodeByData(CommonUtil.getTime(false));
-                if (stsList==null){
-            %><div class="alert alert-info"> 列表数据为空</div><%
-                    return;
-                }
-                for (int i = 0; i < stsList.size(); i++) {
-                    RegisterCodeBean rs = (RegisterCodeBean) stsList.get(i);
-            %>
-
-            <tr>
-                <td><%=rs.getCompanyName() %></td>
-                <td><%=rs.getAppID() %></td>
-                <td><%=rs.getNote() %></td>
-                <td><%=rs.getRegister_code() %></td>
-                <td><%=rs.getTime() %></td>
-                <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
-                <%--<td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>--%>
-                <%--<td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>--%>
-            </tr>
-            </tbody>
-            <%} %>
-        </table>
-    </div>
+    <%--<div class="registerhtml" style="width: 48%">--%>
+        <%--<iFrame src=" http://148.70.108.65:8080/fangzuo/ui/Setting.html" width="48%" height="100%"></iFrame>--%>
+    <%--</div>--%>
 
 </div>
+
+<%--当日请求注册的公司数据--%>
+
+
+
 
 <script>
 var ss = new Vue({
