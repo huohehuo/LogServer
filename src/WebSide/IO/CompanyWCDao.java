@@ -24,7 +24,7 @@ public class CompanyWCDao {
 	public List<Company> getCompany(){
 		List<Company> list = new ArrayList<>();
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "SELECT * FROM Tb_Company ORDER BY cid DESC ";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -45,7 +45,7 @@ public class CompanyWCDao {
 	public List<Company> getCompanyForUpgrade(){
 		List<Company> list = new ArrayList<>();
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "SELECT * FROM Tb_Company A LEFT  JOIN Tb_UpgradeBean B on A.AppID=B.AppID ORDER BY  ifnull(B.UpgradeTime,'99999999') DESC ";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -67,7 +67,7 @@ public class CompanyWCDao {
 	public String getCompanyNum(){
 		String num="";
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "SELECT COUNT(*) AS 数量 FROM Tb_Company";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -88,7 +88,7 @@ public class CompanyWCDao {
 	public List<Company> findCompany(String appid){
 		List<Company> list = new ArrayList<>();
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "SELECT * FROM Tb_Company WHERE AppID='"+appid+"' ORDER BY cid DESC ";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
@@ -112,7 +112,7 @@ public class CompanyWCDao {
 	//添加公司信息
 	public boolean addCompany(Company company){
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "INSERT INTO Tb_Company (CompanyName, App_Version,Kd_Version,AppID,Phone,Address,Remark,EndTime_Server,Img_Logo,CanUse,create_time, App_Version2, App_Version3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			sta = conn.prepareStatement(SQL);
 			sta.setString(1,company.CompanyName);
@@ -146,7 +146,7 @@ public class CompanyWCDao {
 	//修改公司信息(先查出是否包含appid所属的公司，再通过各个字段名更新数据)
 	public boolean changeCompany(Company company){
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String findSQL ="select COUNT(*) as 数量 from Tb_Company where AppID='"+company.getAppID()+"'";
 			sta = conn.prepareStatement(findSQL);
 			rs = sta.executeQuery();
@@ -199,7 +199,7 @@ public class CompanyWCDao {
 	//更新公司信息时，如果版本信息表存在该公司的app版本信息，则更新
 	public void changeUpgradeVersion(Company company){
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String findSQL ="select COUNT(*) as 数量 from Tb_UpgradeBean where AppID='"+company.getAppID()+"'";
 			sta = conn.prepareStatement(findSQL);
 			rs = sta.executeQuery();
@@ -239,7 +239,7 @@ public class CompanyWCDao {
 	public boolean changeCompanyLog(Company company){
 		Lg.e("修改的公司",company);
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String findSQL ="select COUNT(*) as 数量 from Tb_Company where AppID='"+company.getAppID()+"'";
 			sta = conn.prepareStatement(findSQL);
 			rs = sta.executeQuery();
@@ -277,7 +277,7 @@ public class CompanyWCDao {
 	//删除公司项目相关数据
 	public boolean deleteCompany(String appid){
 		try {
-			conn = JDBCUtil.getSQLite4Company();
+			conn = JDBCUtil.getSQLite4Company4WC();
 			String SQL = "DELETE FROM Tb_Company WHERE AppID = '"+appid+"'";
 			Lg.e("删除项目："+SQL);
 			sta = conn.prepareStatement(SQL);

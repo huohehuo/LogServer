@@ -22,12 +22,12 @@ public class JDBCUtil {
 		Connection conn = DriverManager.getConnection("jdbc:sqlite://c:/properties/dbother.db");
 		return conn;
 	}
-	public static Connection getSQLite4CompanyOld() throws ClassNotFoundException, SQLException{
+	public static Connection getSQLite4Company() throws ClassNotFoundException, SQLException{
 		Class.forName("org.sqlite.JDBC");
 		Connection conn = DriverManager.getConnection("jdbc:sqlite://c:/properties/dbCompany.db");
 		return conn;
 	}
-	public static Connection getSQLite4Company() throws ClassNotFoundException, SQLException{
+	public static Connection getSQLite4Company4WC() throws ClassNotFoundException, SQLException{
 		Class.forName("org.sqlite.JDBC");
 		Connection conn = DriverManager.getConnection("jdbc:sqlite://c:/properties/dbWeChatTest.db");
 		return conn;
