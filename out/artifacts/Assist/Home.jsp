@@ -46,6 +46,7 @@
     <div style="width: auto;height: auto;">
         <img src="img/home_top.png" alt="Pulpit rock" width="auto" height="400px">
     </div>
+
     <div class="row" style="margin: 50px">
         <div class="column">
             <img class="column2" style="margin-right: 50px" src="img/ztkj.jpg" alt="#">

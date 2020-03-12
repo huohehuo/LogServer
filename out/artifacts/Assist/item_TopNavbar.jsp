@@ -45,7 +45,7 @@
                 <a class="nav-link" href="FeedBack.jsp" target="index_show">联系</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Manage.jsp" target="index_show">系统管理</a>
+                <a class="nav-link" href="DownList.jsp" target="index_show">相关下载</a>
             </li>
         </ul>
     </div>
