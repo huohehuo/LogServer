@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,7 +21,25 @@ public class CompanyChange extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
-        Lg.e("进入--公司信息修改");
+        // 如果不存在 session 会话，则创建一个 session 对象
+        HttpSession session = request.getSession(false);
+        String userIDKey = new String("userID");
+        String userID = new String("Runoob");
+        // 检查网页上是否有新的访问者
+//        if (session.isNew()){
+//        session.setAttribute(userIDKey, userID);
+//        } else {
+//            visitCount = (Integer)session.getAttribute(visitCountKey);
+//            visitCount = visitCount + 1;
+//            userID = (String)session.getAttribute(userIDKey);
+//        }
+//        session.setAttribute(visitCountKey,  visitCount);
+        // 设置响应内容类型
+//        response.setContentType("text/html;charset=UTF-8");
+
+
+        String sssss = (String)session.getAttribute(userIDKey);
+        Lg.e("进入--公司信息修改"+sssss);
         String company_name = request.getParameter("company_name");
         String app_version = request.getParameter("app_version");
         String app_version2 = request.getParameter("app_version2");

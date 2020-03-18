@@ -41,7 +41,7 @@ public class GetCompany extends HttpServlet {
 
 	           String appid=request.getParameter("json");
 			Lg.e("得到公司id",appid);
-			CompanyDao run=new CompanyDao();
+			CompanyWCDao run=new CompanyWCDao();
 //	          	stu.setHid(hid);
 			List<Company> list2 = run.getCompany();
 

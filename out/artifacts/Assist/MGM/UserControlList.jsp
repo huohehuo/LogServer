@@ -11,9 +11,6 @@
 <%@ page import="WebSide.CompanyDao" %>
 <%@ page import="Bean.Company" %>
 <%@ page import="Utils.BaseData" %>
-<%@ page import="Utils.ExcelExport" %>
-<%@ page import="org.apache.poi.hssf.usermodel.HSSFWorkbook" %>
-<%@ page import="WebSide.UserControlDao" %>
 <%@ page import="Bean.TestB" %>
 <%@ page import="WebSide.StatisticalDao" %>
 <%@ page import="com.google.gson.Gson" %>
@@ -57,7 +54,6 @@
     String tips = (String) request.getAttribute("tips");
 %>
 
-<h5 ><%=tips%></h5>--%>
 <div>
     <br/>
     <h2 style="width: 200px;text-align:center">用户控制->

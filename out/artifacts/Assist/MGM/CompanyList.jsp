@@ -14,6 +14,7 @@
 <%@ page import="Utils.ExcelExport" %>
 <%@ page import="org.apache.poi.hssf.usermodel.HSSFWorkbook" %>
 <%@ page import="WebSide.StatisticalDao" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <html>
 <head>
     <title>注册用户管理</title>
