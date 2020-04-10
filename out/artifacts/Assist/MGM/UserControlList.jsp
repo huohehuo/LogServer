@@ -8,7 +8,7 @@
 <%@ page language="java" import="java.util.*" import="Bean.RegisterBean" import="WebSide.WebDao"
          contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ page import="WebSide.CompanyDao" %>
+<%@ page import="WebSide.Info" %>
 <%@ page import="Bean.Company" %>
 <%@ page import="Utils.BaseData" %>
 <%@ page import="Bean.TestB" %>
@@ -37,22 +37,18 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
 
 </head>
-
+<%
+    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
+        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
+    }
+%>
 <body>
 <jsp:include page="../headLayout.jsp"/>
 <%--
-<%
-    WebDao aa = new WebDao();
-//    List list = (List) request.getAttribute("pl_list");
-    List list = aa.getRegister();
 
-
-    for (int i = 0; i < list.size(); i++) {
-        RegisterBean rs = (RegisterBean) list.get(i);
-%>--%>
-<%--<%
     String tips = (String) request.getAttribute("tips");
-%>
+--%>
 
 <div>
     <br/>
@@ -117,7 +113,6 @@
 </div>
 
 
-<%--<div style="width: 100%">--%>
     <div  class="card" style="margin: 10px">
 
         <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>

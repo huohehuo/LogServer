@@ -10,7 +10,7 @@
          pageEncoding="UTF-8" %>
 <%@ page import="WebSide.CompanyDao" %>
 <%@ page import="Bean.Company" %>
-<%@ page import="Utils.BaseData" %>
+<%@ page import="WebSide.Info" %>
 <%@ page import="Utils.ExcelExport" %>
 <%@ page import="org.apache.poi.hssf.usermodel.HSSFWorkbook" %>
 <%@ page import="WebSide.UpgradeDao" %>
@@ -29,6 +29,12 @@
     <%--<link rel="stylesheet" href="css/bootstrap.min.css">--%>
 </head>
 <body>
+<%
+    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
+        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
+    }
+%>
 <jsp:include page="../headLayout.jsp"/>
 <%--
 <%

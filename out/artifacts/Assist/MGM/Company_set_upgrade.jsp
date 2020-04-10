@@ -9,7 +9,7 @@
          contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ page import="java.io.*,java.util.*" %>
-<%@ page import="WebSide.FeedBack" %>
+<%@ page import="WebSide.Info" %>
 <%@ page import="Utils.Lg" %>
 <%@ page import="WebSide.CompanyDao" %>
 <%@ page import="Bean.Company" %>
@@ -32,7 +32,12 @@
 </head>
 
 <body>
-
+<%
+    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
+        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
+    }
+%>
 <%
 //    CompanyDao companyDao = new CompanyDao();
     //获得number

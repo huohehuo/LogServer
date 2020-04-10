@@ -8,7 +8,7 @@
 <%@ page language="java" import="java.util.*" import="Bean.FeedBackBean" import="WebSide.WebDao"
          contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ page import="WebSide.FeedBack" %>
+<%@ page import="WebSide.Info" %>
 <%@ page import="WebSide.CompanyDao" %>
 <%@ page import="Bean.Company" %>
 <%@ page import="WebSide.StatisticalDao" %>
@@ -77,6 +77,12 @@
     }
 </style>
 <body>
+<%
+    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
+        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
+    }
+%>
 <jsp:include page="../headLayout.jsp"/>
 
 <div>
