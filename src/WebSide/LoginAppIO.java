@@ -31,6 +31,7 @@ public class LoginAppIO extends HttpServlet {
         String sname = request.getParameter("server_name");
         String  spwd = request.getParameter("server_pwd");
         String database = request.getParameter("database");
+        Lg.e(userName+pwd);
         if ("admin".equals(userName) && "fangzuokeji601.".equals(pwd)){
             session.setAttribute(Info.FUserNameKey, userName);
             session.setAttribute(Info.FUserPwdKey, pwd);
@@ -73,7 +74,7 @@ public class LoginAppIO extends HttpServlet {
 ////                response.sendRedirect(request.getContextPath()+"/WebApp/errorHttp.jsp");
 //            }
         }else{
-            request.setAttribute("feedback", "登录失败,用户名和密码不能为空");
+            request.setAttribute("feedback", "登录失败,用户名和密码错误");
             request.getRequestDispatcher("/MGM/errorHttp.jsp").forward(request, response);
 //            response.sendRedirect(request.getContextPath()+"/WebApp/errorHttp.jsp");
         }

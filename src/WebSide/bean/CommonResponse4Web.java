@@ -3,6 +3,7 @@ package WebSide.bean;
 import Bean.ConnectResponseBean;
 import Bean.DownloadReturnBean;
 import Bean.InStorageNumListBean;
+import Bean.RegisterCodeBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ public class CommonResponse4Web {
 	public List<DownloadReturnBean.storage> storages;
 	public ArrayList<InStorageNumListBean.inStoreList> inStoreLists;
 	public ArrayList<ConnectResponseBean.DataBaseList> dataBaseLists;
+	public ArrayList<RegisterCodeBean> registerCodeBeans;
 
 	public CommonResponse4Web() {
 
@@ -33,6 +35,10 @@ public class CommonResponse4Web {
 		this.state = state;
 		this.size = size;
 		this.inStoreLists = inStoreLists;
+	}
+	public CommonResponse4Web(boolean state, int size) {
+		this.state = state;
+		this.size = size;
 	}
 	public CommonResponse4Web(boolean state, int size, ArrayList<InStorageNumListBean.inStoreList> inStoreLists, String msg) {
 		this.state = state;

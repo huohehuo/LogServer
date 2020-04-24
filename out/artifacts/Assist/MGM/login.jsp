@@ -10,6 +10,7 @@
          pageEncoding="UTF-8" %>
 <%--<%@ page import="com.sun.org.apache.xpath.internal.operations.String" %>--%>
 <%@ page import="WebSide.Info" %>
+<%@ page import="Utils.Lg" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -60,7 +61,6 @@
     <div id="vue_data_list" class="card" style="padding: 50px">
         <form action="../LoginAppIO" method="post">
         <%--<form action="" name="form_login" method="post">--%>
-
             <div class="login">
                 <h2 class="row justify-content-center" style="margin-bottom: 50px">方左科技数据中心</h2>
                 <div class="login-top">

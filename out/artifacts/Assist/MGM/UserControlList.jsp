@@ -42,6 +42,8 @@
     if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
         response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
     }
+
+    String thistime = CommonUtil.getTime(false);
 %>
 <body>
 <jsp:include page="../headLayout.jsp"/>
@@ -113,11 +115,20 @@
 </div>
 
 
-    <div  class="card" style="margin: 10px">
+    <div id="vue_list"   class="card" style="margin: 10px">
+        <div style="margin: 20px;padding-left: 20px;padding-top: 10px">
+            <h5 >当天请求注册的数据---{{size}}</h5>
+            <div  class="form-inline" >
+                <a>时间过滤查询</a>
+                <input type="text" class="form-control" id="seach" placeholder="Enter your name" name="seach" v-model="search_name"
+                       style="width: 50%;margin: 10px">
+            </div>
 
-        <a style="padding-left: 20px;padding-top: 10px">当天请求注册的数据:</a>
+        </div>
+        <hr/>
+
         <div class="card-body">
-            <table class="table">
+            <%--<table class="table">
                 <thead>
                 <%
                     StatisticalDao statisticalDao = new StatisticalDao();
@@ -128,7 +139,7 @@
                     <th>备注</th>
                     <th>注册码</th>
                     <th>请求时间</th>
-                    <%--<th>时间控制日期</th>--%>
+                    &lt;%&ndash;<th>时间控制日期</th>&ndash;%&gt;
                 </tr>
                 </thead>
                 <tbody>
@@ -149,12 +160,33 @@
                     <td><%=rs.getNote() %></td>
                     <td><%=rs.getRegister_code() %></td>
                     <td><%=rs.getTime() %></td>
-                    <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
-                    <%--<td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>--%>
-                    <%--<td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>--%>
+                    &lt;%&ndash;<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>&ndash;%&gt;
+                    &lt;%&ndash;<td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>&ndash;%&gt;
+                    &lt;%&ndash;<td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>&ndash;%&gt;
                 </tr>
                 </tbody>
                 <%} %>
+            </table>--%>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>公司名称</th>
+                    <th>APPID</th>
+                    <th>备注</th>
+                    <th>注册码</th>
+                    <th>请求时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="storage in registerCodeBeans">
+                    <td>{{storage.CompanyName}}</td>
+                    <td>{{storage.AppID}}</td>
+                    <td>{{storage.note}}</td>
+                    <td>{{storage.register_code}}</td>
+                    <td>{{storage.register_time}}</td>
+                </tr>
+                </tbody>
             </table>
         </div>
 
@@ -171,6 +203,68 @@
 
 
 <script>
+    var check = new Vue({
+        el: '#vue_list',
+        data :{
+            loading_text: '',
+            search_name: '<%=thistime%>',
+            counter: 1,
+            size: 0,
+            bjson: '',
+            urlset: 'http://192.168.0.106:8085/Assist/GetRegisterUser4Web',
+            info: null,
+            registerCodeBeans:[]
+        },
+
+        mounted:function(){
+            this.getStoreData();
+        },
+        // 在 `methods` 对象中定义方法
+        methods: {
+            getStoreData: function (event) {
+                this.loading_text = "正在查找...";
+                var getApp = this;
+                axios.get(getApp.urlset, {
+                    params: {
+                        seach: getApp.search_name,
+                    }
+                }).then(function (response) {
+                    getApp.loading_text = "";
+                        //                console.log(response);
+                    getApp.registerCodeBeans =response.data.registerCodeBeans
+                    getApp.size =response.data.size
+                    }).catch(function (error) {
+                    getApp.loading_text = "查找错误" + error;
+                        console.log(error);
+                    getApp.storeList = 'Error! Could not reach the API. ' + error
+                    })
+            }
+        }
+
+//        watch:{
+
+//        },
+
+    });
+    check.$watch('search_name', function(nval, oval) {
+        check.getStoreData();
+
+////        alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!'+check.urlset);
+//        axios.post(check.url2,check.post_data)
+//        .then(function (response) {
+//        console.log(response);
+//            check.bjson =response.data.storages;
+//        //                        vm.answer = _.capitalize(response.data.answer)
+//        })
+//        .catch(function (error) {
+//        console.log(error);
+//        check.bjson = 'Error! Could not reach the API. ' + error
+//        })
+
+    });
+
+
+
 var ss = new Vue({
     el:'rgstVue',
     data:{

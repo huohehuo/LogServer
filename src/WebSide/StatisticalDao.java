@@ -467,19 +467,19 @@ public class StatisticalDao {
 		return bean;
 	}
 
-	//根据当天时间，查询出当天存在活跃用户的项目
-	public List<RegisterCodeBean> getRegisterCodeByData(String time){
-		List<RegisterCodeBean> list = new ArrayList<>();
+	//根据当天时间，查询出当天请求注册的用户
+	public ArrayList<RegisterCodeBean> getRegisterCodeByData(String time){
+        ArrayList<RegisterCodeBean> list = new ArrayList<>();
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT *  FROM Tb_register where register_time= '"+time+"' GROUP BY rid";
+			String SQL = "SELECT *  FROM Tb_register where register_time LIKE '%"+time+"%' GROUP BY rid";
 			Lg.e("获取活跃数据："+SQL);
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
 			while (rs.next()) {
 				list.add(backBeanForRC(rs));
 			}
-			Lg.e("获取活跃数据",list);
+			Lg.e("注册的用户",list);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

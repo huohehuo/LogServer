@@ -95,7 +95,7 @@
     StatisticalDao statisticalDao = new StatisticalDao();
 //    List list = (List) request.getAttribute("pl_list");
     String companyNum = aa.getCompanyNum();
-    String statisticalNum = statisticalDao.getStatisticalNum();
+    String statisticalNum = statisticalDao.getStatisticalNum();//累计用户数
     String statisticalLiveUserNum = statisticalDao.getStatisticalLiveUserNum();//获取统计信息表中的当天的活跃用户数
     String statisticalActiveNum = statisticalDao.getStatisticalActiveNum();//获取统计信息表中的当天的活跃度
 
