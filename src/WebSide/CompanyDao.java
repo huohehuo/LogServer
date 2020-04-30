@@ -93,7 +93,6 @@ public class CompanyDao {
 		}
 		return num;
 	}
-
 	//获取所有公司信息
 	public List<Company> findCompany(String appid){
 		List<Company> list = new ArrayList<>();
@@ -106,6 +105,30 @@ public class CompanyDao {
 				list.add(backBean(rs));
 			}
 			Lg.e("通过appid找到公司列表",list);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		if (list.size()==0){
+			list.add(new Company("","","","","","","","","","","","","",""));
+		}
+		return list;
+	}
+	//获取所有公司信息
+	public ArrayList<Company> findCompanyByName(String name){
+		ArrayList<Company> list = new ArrayList<>();
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String SQL = "SELECT * FROM Tb_Company WHERE CompanyName like '%"+name+"%' ORDER BY cid DESC ";
+			sta = conn.prepareStatement(SQL);
+			rs = sta.executeQuery();
+			while (rs.next()) {
+				list.add(backBean(rs));
+			}
+			Lg.e("通过name找到公司列表",list);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

@@ -63,7 +63,7 @@
                     <a style="margin-right: 20px">公司名称:</a>
                     <input type="hidden" class="form-control" id="app_id" placeholder="Enter telephone" name="app_id"
                            value="<%=company.getAppID()%>" style="width: 100%;margin-right: 10px">
-                    <input type="text" class="form-control" id="company_name" placeholder="Enter your name" name="company_name"
+                    <input readonly="true" type="text" class="form-control" id="company_name" placeholder="Enter your name" name="company_name"
                            value="<%=company.getCompanyName()%>" style="width: 100%;margin-right: 10px">
                 </div>
             </div>
@@ -78,11 +78,11 @@
                     <input type="text" class="form-control" id="app_version" placeholder="Enter telephone" name="app_version"
                            value="<%=company.getAppVersion()%>" style="width: 100%;margin-right: 10px">
                 </div>
-                <div class="form-group" style="width: 25%">
-                    <a style="margin-right: 20px">更新日期:</a>
-                    <input type="text" class="form-control" id="upgrade_time" placeholder="Enter telephone" name="upgrade_time"
-                           value="<%=company.getUpgradeTime()%>" style="width: 100%;margin-right: 10px">
-                </div>
+                <%--<div class="form-group" style="width: 25%">--%>
+                    <%--<a style="margin-right: 20px">更新日期:</a>--%>
+                    <%--<input type="text" class="form-control" id="upgrade_time" placeholder="Enter telephone" name="upgrade_time"--%>
+                           <%--value="<%=company.getUpgradeTime()%>" style="width: 100%;margin-right: 10px">--%>
+                <%--</div>--%>
             </div>
             <div class="form-group">
                 <a >更新提示:</a>

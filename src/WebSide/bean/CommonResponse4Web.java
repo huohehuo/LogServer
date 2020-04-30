@@ -1,9 +1,6 @@
 package WebSide.bean;
 
-import Bean.ConnectResponseBean;
-import Bean.DownloadReturnBean;
-import Bean.InStorageNumListBean;
-import Bean.RegisterCodeBean;
+import Bean.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +13,7 @@ public class CommonResponse4Web {
 	public ArrayList<InStorageNumListBean.inStoreList> inStoreLists;
 	public ArrayList<ConnectResponseBean.DataBaseList> dataBaseLists;
 	public ArrayList<RegisterCodeBean> registerCodeBeans;
+	public ArrayList<Company> companies;
 
 	public CommonResponse4Web() {
 

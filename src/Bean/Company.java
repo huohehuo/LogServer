@@ -16,6 +16,7 @@ public class Company {
     public String CanUse;//0；允许使用，1停止使用
     public String create_time;//创建日期
     public String user_num_max;//创建日期
+    public String has_user_num;//创建日期
 
     public Company(String companyName, String appVersion,String appVersion2,String appVersion3, String kingdeeVersion, String appID,
                    String img_Logo, String phone, String address, String remark, String endTime, String canUse, String createTime,String usermax) {

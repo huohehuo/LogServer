@@ -1,6 +1,7 @@
 package WebSide;
 
 import Bean.UpgradeBean;
+import Utils.CommonUtil;
 import Utils.Lg;
 
 import javax.servlet.ServletException;
@@ -30,7 +31,8 @@ public class UpgradeChange extends HttpServlet {
         String upgrade_url = request.getParameter("upgrade_url");
         String upgrade_url2 = request.getParameter("upgrade_url2");
         String upgrade_url3 = request.getParameter("upgrade_url3");
-        String upgrade_time = request.getParameter("upgrade_time");
+//        String upgrade_time = request.getParameter("upgrade_time");
+        String upgrade_time = CommonUtil.getTime(false);
 //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //        Date curDate = new Date();
 //        String create_time = format.format(curDate);

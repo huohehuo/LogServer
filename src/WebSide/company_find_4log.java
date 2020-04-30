@@ -44,8 +44,8 @@ public class company_find_4log extends HttpServlet {
 				   request.setAttribute("company", list2.get(0));
 				   request.getRequestDispatcher("MGM/Company_set_log.jsp").forward(request, response);
 			   }else{
-				   request.setAttribute("company", null);
-				   request.getRequestDispatcher("MGM/Company_set.jsp").forward(request, response);
+				   request.setAttribute("feedback", "查询公司日志失败");
+				   request.getRequestDispatcher("/MGM/errorHttp.jsp").forward(request, response);
 			   }
 
 		} catch (Exception e) {

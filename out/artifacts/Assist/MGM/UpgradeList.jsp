@@ -28,6 +28,9 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <%--<link rel="stylesheet" href="css/bootstrap.min.css">--%>
 </head>
+<script>
+    .list{font:Georgia, "Times New Roman", Times, serif;font-size:14px;width:200px;display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;}
+</script>
 <body>
 <%
     String userName = (String)session.getAttribute(Info.FUserNameKey);
@@ -65,8 +68,10 @@
                 <thead>
                 <tr>
                     <th>公司名称</th>
-                    <th>APP版本号</th>
-                    <th>最近更新时间</th>
+                    <th>最新APP版本号</th>
+                    <%--<th>最近更新时间</th>--%>
+                    <th>操作</th>
+                    <th>最近更新文本预览</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -86,9 +91,11 @@
                 <tr>
                     <td><%=rs.getCompanyName() %></td>
                     <td><%=rs.getAppVersion() %></td>
-                    <td><%=upgradeDao.getUpgradeTime(rs.getAppID()) %></td>
+                    <%--<td><%=upgradeDao.getUpgradeTime(rs.getAppID()) %></td>--%>
                     <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
                         <td><a href="../company_find_4upgrade?json=<%=rs.getAppID()%>">管理</a></td>
+                        <td><a href="../company_find_4log?json=<%=rs.getAppID()%>" style="max-width: 333px;overflow: hidden;white-space: nowrap;-ms-text-overflow: ellipsis;display: block;float: left;">
+                            <%=rs.getRemark()%></a></td>
                 </tr>
                 </tbody>
                 <%} %>

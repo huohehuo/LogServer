@@ -201,7 +201,6 @@ public class StatisticalDao {
 	public List<LiveDataBean> getStatisticalLiveData4User(String time){
 		List<LiveDataBean> liveDataBeans = new ArrayList<>();
 		try {
-
 			conn = JDBCUtil.getSQLite4Statistical();
 //			String SQL = "SELECT distinct realTime FROM Tb_Statistical WHERE realTime =?";
 			String SQL = "Select count(1) as 行数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realTimeShort";

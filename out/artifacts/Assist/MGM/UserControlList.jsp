@@ -44,6 +44,7 @@
     }
 
     String thistime = CommonUtil.getTime(false);
+    String basevuelink = Info.BaseVueLink;
 %>
 <body>
 <jsp:include page="../headLayout.jsp"/>
@@ -66,7 +67,7 @@
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">IP地址:</a>
                 <input type="text" class="form-control" id="wrt_ip" placeholder="Enter telephone" name="wrt_ip" href="fff" v-model="T_ip"
-                       value="192.168.0.103" style="width: 100%;margin-right: 10px">
+                       value="192.168.0.105" style="width: 100%;margin-right: 10px">
             </div>
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px" v-model="T_tip">端口:</a>
@@ -92,7 +93,7 @@
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">IP地址:</a>
                 <input type="text" class="form-control" id="time_ip" placeholder="Enter telephone" name="time_ip" href="fff"
-                       value="192.168.0.103" style="width: 100%;margin-right: 10px">
+                       value="192.168.0.105" style="width: 100%;margin-right: 10px">
             </div>
             <div class="form-group" style="width: 25%">
                 <a style="margin-right: 20px">端口:</a>
@@ -211,7 +212,8 @@
             counter: 1,
             size: 0,
             bjson: '',
-            urlset: 'http://192.168.0.106:8085/Assist/GetRegisterUser4Web',
+            urlset: 'http://<%=basevuelink%>/GetRegisterUser4Web',
+//            urlset: 'http://148.70.108.65:8080/LogAssist/GetRegisterUser4Web',
             info: null,
             registerCodeBeans:[]
         },

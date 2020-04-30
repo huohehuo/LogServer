@@ -103,10 +103,10 @@
     List<LiveDataBean> liveData = statisticalDao.getStatisticalLiveData4User(thisMon.substring(0,thisMon.length()-2));
 //    List<LiveDataBean> liveData4Num = statisticalDao.getStatisticalLiveData4Num(thisMon.substring(0,thisMon.length()-2));//无法统计每天活跃度
     List<String> dayList = new ArrayList<>();
-    List<String> dayList4Num = new ArrayList<>();
+//    List<String> dayList4Num = new ArrayList<>();
     for (int i = 0; i <= 31; i++) {
         dayList.add(i,"0");
-        dayList4Num.add(i,"0");
+//        dayList4Num.add(i,"0");
     }
 //    Lg.e("得到daylist1111"+dayList.size(),dayList);
 
@@ -155,6 +155,8 @@
 
 <%--<div id="container2" style="width:100%;height:400px"></div>--%>
 <hr/>
+<button type="button" class="btn btn-outline-primary" style="margin-left: 20px" value="往月数据" onclick="location.href='ActiveManageList.jsp'">往月数据</button>
+
 <div id="container" style="width:100%;height:400px"></div>
 <script>
     // JS 代码
