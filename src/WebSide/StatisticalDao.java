@@ -322,7 +322,7 @@ public class StatisticalDao {
 			}else{
 				int addnum=MathUtil.toInt(num)+1;
 				Lg.e("写入数量:"+addnum);
-				String SQL = "UPDATE Tb_Statistical set num=?,realTime =?,phone=?,realTimeShort=? WHERE AppID=? AND imie = ?";
+				String SQL = "UPDATE Tb_Statistical set num=?,realTime =?,phone=?,realTimeShort=?,App_Version=? WHERE AppID=? AND imie = ?";
 //				Lg.e("更新数据库语句"+SQL);
 				sta = conn.prepareStatement(SQL);
 				sta.setString(1,addnum+"");
@@ -331,6 +331,7 @@ public class StatisticalDao {
 				sta.setString(4,company.AppID);
 				sta.setString(5,company.imie);
 				sta.setString(6,company.realTimeShort);
+				sta.setString(7,company.AppVersion);
 				int i = sta.executeUpdate();
 				if(i>0){
 					//更新公司信息表的app版本号

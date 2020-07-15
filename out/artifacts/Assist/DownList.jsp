@@ -59,7 +59,7 @@
                         <tbody>
                         <tr>
                             <td>JAVA</td>
-                            <td><a href="http://www.fangzuokeji.com/res/java64.exe">JAVA(64位)</a>----<a href="http://www.fangzuokeji.com/res/java32.jpg">JAVA(32位)</a></td>
+                            <td><a href="http://www.fangzuokeji.com/GwRes/java64.exe">JAVA(64位)</a>----<a href="http://www.fangzuokeji.com/GwRes/java32.exe">JAVA(32位)</a></td>
                             <td>根据windows系统版本选择</td>
                         </tr>
                         <tr>

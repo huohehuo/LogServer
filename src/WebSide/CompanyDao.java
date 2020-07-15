@@ -113,7 +113,7 @@ public class CompanyDao {
 			JDBCUtil.close(rs,sta,conn);
 		}
 		if (list.size()==0){
-			list.add(new Company("","","","","","","","","","","","","",""));
+			list.add(new Company("","","","","","","","","","","","","","0"));
 		}
 		return list;
 	}

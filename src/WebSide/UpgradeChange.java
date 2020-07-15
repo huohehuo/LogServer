@@ -20,6 +20,9 @@ public class UpgradeChange extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         Lg.e("进入---版本信息修改");
+        //request.getPart()获取指定的文件上传域。还有getParts()来获取所有的文件上传域
+//        Part part = request.getPart("file");
+
         String company_name = request.getParameter("company_name");
         String app_version = request.getParameter("app_version");
         String app_version2 = request.getParameter("app_version2");

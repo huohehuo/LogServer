@@ -10,35 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314ea08-6d77-469a-9858-6948002aef46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WebSide/GetCompany4Web.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/Bean/Company.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/Bean/Company.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WeChatAC/WeChatForCode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/ApkApi/getCompanyData.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/GetCompany4Web.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/uploadFileTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WeChatAC/WeChatForCode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/ApkApi/getCompanyData.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/GetCompany4Web.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/uploadFileTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200425-092502.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200425-093218.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200426-092923.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200428-053200.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200428-102621.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200430-100314.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200506-042310.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200506-112945.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200513-041913.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200513-104726.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200526-033311.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200526-103335.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200603-021934.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200618-041815.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200715-025328.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3615583d-3a16-41ca-bde6-fe5f078951bd.corrupted.20200715-052527.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/ActiveManageList.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WeChatAC/WeChatForCode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WebSide/ApkApi/getCompanyData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WebSide/uploadFileTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/CompanyDao.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/CompanyDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/Info.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/Info.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/StatisticalDao.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/StatisticalDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/bean/CommonResponse4Web.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/bean/CommonResponse4Web.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/company_find.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/company_find.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/company_find_4log.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/company_find_4log.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/Company.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/Company.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/UpgradeChange.class" afterPath="$PROJECT_DIR$/out/artifacts/Assist/WEB-INF/classes/WebSide/UpgradeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/CompanyDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/CompanyDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/Info.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/Info.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/StatisticalDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/StatisticalDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/bean/CommonResponse4Web.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/bean/CommonResponse4Web.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/company_find.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/company_find.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/company_find_4log.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/company_find_4log.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/UpgradeChange.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/WebSide/UpgradeChange.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/Case.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/Case.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/DownList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/DownList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/FeedBack.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/FeedBack.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/Home.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/Home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/UserControlList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/UserControlList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Assist/MGM/item_Right_mgm.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Assist/MGM/item_Right_mgm.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/Company.java" afterPath="$PROJECT_DIR$/src/Bean/Company.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/CompanyDao.java" afterPath="$PROJECT_DIR$/src/WebSide/CompanyDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/Info.java" afterPath="$PROJECT_DIR$/src/WebSide/Info.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/StatisticalDao.java" afterPath="$PROJECT_DIR$/src/WebSide/StatisticalDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/UpgradeChange.java" afterPath="$PROJECT_DIR$/src/WebSide/UpgradeChange.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/bean/CommonResponse4Web.java" afterPath="$PROJECT_DIR$/src/WebSide/bean/CommonResponse4Web.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/company_find.java" afterPath="$PROJECT_DIR$/src/WebSide/company_find.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebSide/company_find_4log.java" afterPath="$PROJECT_DIR$/src/WebSide/company_find_4log.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/web/WEB-INF/classes/" />
@@ -66,85 +82,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Info.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebSide/Info.java">
+      <file leaf-file-name="CheckUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WeChatAC/CheckUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+            <state relative-caret-position="572">
+              <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_TopNav_mgm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/item_TopNav_mgm.jsp">
+      <file leaf-file-name="WeChatForCode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WeChatAC/WeChatForCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyList.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp">
+      <file leaf-file-name="item_TopNavbar.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/item_TopNavbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
-              <folding>
-                <element signature="e#2881#4038#0#JSP" expanded="false" />
-                <marker date="1588236105515" expanded="false" signature="2773:2796" ph="..." />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpgradeList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp">
+      <file leaf-file-name="Home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/Home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="78" column="49" lean-forward="true" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpgradeDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebSide/UpgradeDao.java">
+      <file leaf-file-name="FeedBack.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/FeedBack.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
-              <folding>
-                <marker date="1576662863792" expanded="true" signature="1085:1139" ph="SELECT * FRO... Tb_UpgradeBean" />
-                <marker date="1576662863792" expanded="true" signature="1598:1639" ph="SELECT COUNT... Tb_UpgradeBean" />
-                <marker date="1576662863792" expanded="true" signature="2085:2154" ph="SELECT Upgra... Tb_UpgradeBean" />
-                <marker date="1576662863792" expanded="true" signature="2646:2716" ph="SELECT * FRO... Tb_UpgradeBean" />
-                <marker date="1576662863792" expanded="true" signature="3226:3304" ph="select COUNT... Tb_UpgradeBean" />
-                <marker date="1576662863792" expanded="true" signature="3549:3760" ph="INSERT INTO Tb_UpgradeBean... " />
-                <marker date="1576662863792" expanded="true" signature="4538:4775" ph="UPDATE Tb_Up... " />
-                <marker date="1576662863792" expanded="true" signature="5994:6063" ph="select COUNT... Tb_Company" />
-                <marker date="1576662863792" expanded="true" signature="6303:6400" ph="UPDATE Tb_Co... " />
-                <marker date="1576662863792" expanded="true" signature="6939:7015" ph="select COUNT... Tb_Company" />
-                <marker date="1576662863792" expanded="true" signature="7540:7602" ph="UPDATE Tb_Co... " />
-                <marker date="1576662863792" expanded="true" signature="8021:8069" ph="DELETE FROM " />
-              </folding>
+            <state relative-caret-position="-506">
+              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company_set_upgrade.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp">
+      <file leaf-file-name="uploadFileTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebSide/uploadFileTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1588235792009" expanded="false" signature="3866:3876" ph="..." />
-                <marker date="1588235792009" expanded="false" signature="3917:3935" ph="..." />
-                <marker date="1588235792009" expanded="false" signature="4163:4193" ph="..." />
-              </folding>
+            <state relative-caret-position="598">
+              <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,18 +145,28 @@
       <file leaf-file-name="Company_set.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="77" column="37" lean-forward="false" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+            <state relative-caret-position="264">
+              <caret line="72" column="18" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bean/Company.java">
+      <file leaf-file-name="UploadStatistical.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebSide/ApkApi/UploadStatistical.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="312">
+              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackUpData.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/BackUpData.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="63" column="2" lean-forward="false" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -181,9 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FIELDS_INSERT</find>
-      <find>INSERT_SQL</find>
-      <find>getSQLite4Company</find>
       <find>session</find>
       <find>checkCp</find>
       <find>frmAppId</find>
@@ -208,9 +208,12 @@
       <find>dayList4Num</find>
       <find>得到当天活跃用户数据</find>
       <find>2020-04-23 16:18:41 升级提示</find>
-      <find>upgrade_time</find>
       <find>getTime</find>
       <find>app_id</find>
+      <find>upgrade_time</find>
+      <find>name</find>
+      <find>file</find>
+      <find>UpgradeChange</find>
     </findStrings>
     <replaceStrings>
       <replace>rs</replace>
@@ -236,12 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/WebSide/ApkApi/UploadRegisterUser.java" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/headLayout.jsp" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/item_TopNav_mgm.jsp" />
-        <option value="$PROJECT_DIR$/src/RegisterUtils/RegisterCode.java" />
-        <option value="$PROJECT_DIR$/src/Utils/HttpRequestUtils.java" />
-        <option value="$PROJECT_DIR$/src/Utils/MathUtil.java" />
         <option value="$PROJECT_DIR$/src/WebSide/GW/ActiveUseTime.java" />
         <option value="$PROJECT_DIR$/src/WebSide/WebResponse.java" />
         <option value="$PROJECT_DIR$/src/WebSide/IO/DelCompany.java" />
@@ -249,11 +246,9 @@
         <option value="$PROJECT_DIR$/src/WebSide/IO/CompanyWCDao.java" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/Manage.jsp" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/item_TopNavbar.jsp" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/DownList.jsp" />
         <option value="$PROJECT_DIR$/src/WebSide/GW/ActiveRegisterCode.java" />
         <option value="$PROJECT_DIR$/src/WebSide/CompanyChange.java" />
         <option value="$PROJECT_DIR$/src/WebSide/IO/GetCompany.java" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/Home.jsp" />
         <option value="$PROJECT_DIR$/src/WeChatAC/CheckUtil.java" />
         <option value="$PROJECT_DIR$/src/Utils/JDBCUtil.java" />
         <option value="$PROJECT_DIR$/src/WebSide/bean/UserLoginBean.java" />
@@ -269,7 +264,6 @@
         <option value="$PROJECT_DIR$/src/WebSide/LoginAppIO.java" />
         <option value="$PROJECT_DIR$/src/WebSide/GetRegisterUser4Web.java" />
         <option value="$PROJECT_DIR$/src/WebSide/bean/CommonResponse4Web.java" />
-        <option value="$PROJECT_DIR$/src/WebSide/CompanyDao.java" />
         <option value="$PROJECT_DIR$/src/WebSide/company_find_4log.java" />
         <option value="$PROJECT_DIR$/src/Bean/Company.java" />
         <option value="$PROJECT_DIR$/src/WebSide/company_find.java" />
@@ -278,15 +272,24 @@
         <option value="$PROJECT_DIR$/src/WebSide/GetCompany4Web.java" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/UserControlList.jsp" />
         <option value="$PROJECT_DIR$/src/WebSide/Info.java" />
-        <option value="$PROJECT_DIR$/src/WebSide/StatisticalDao.java" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/item_Right_mgm.jsp" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/ActiveManageList.jsp" />
         <option value="$PROJECT_DIR$/src/WebSide/Utils/CommonUtil.java" />
-        <option value="$PROJECT_DIR$/src/WebSide/UpgradeChange.java" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set.jsp" />
-        <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp" />
         <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp" />
+        <option value="$PROJECT_DIR$/src/WebSide/uploadFileTest.java" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp" />
+        <option value="$PROJECT_DIR$/src/WebSide/ApkApi/getCompany.java" />
+        <option value="$PROJECT_DIR$/src/WebSide/ApkApi/getCompanyData.java" />
+        <option value="$PROJECT_DIR$/src/WebSide/CompanyDao.java" />
+        <option value="$PROJECT_DIR$/src/WebSide/UpgradeChange.java" />
+        <option value="$PROJECT_DIR$/src/WebSide/StatisticalDao.java" />
+        <option value="$PROJECT_DIR$/src/WeChatAC/WeChatForCode.java" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/FeedBack.jsp" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/Case.jsp" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/DownList.jsp" />
+        <option value="$PROJECT_DIR$/out/artifacts/Assist/Home.jsp" />
       </list>
     </option>
   </component>
@@ -410,72 +413,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WebSide" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebSide" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GW" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebSide" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LogServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -526,26 +463,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MGM" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -556,7 +481,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567527462146" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="SQL Server (Microsoft)" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../金蝶K3WISE14.0-徐州金友/金友SERVER" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FzApp-DG-JSDZ/DGJS-FzApp" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -564,23 +489,23 @@
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/lib/sqlite-jdbc-3.8.7.jar" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist\MGM\feedBack" />
+      <recent name="E:\FZ-kingdee\LogServer\web\webpage" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="WeChatAC" />
+      <recent name="WebSide.ApkApi" />
+      <recent name="WebSide" />
+      <recent name="WebSide.Utils" />
+      <recent name="WebSide.bean" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist\MGM" />
       <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist\img" />
       <recent name="D:\FZ-kingdee\LogServer\src\WebSide" />
       <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist" />
       <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist\js" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="WebSide.Utils" />
-      <recent name="WebSide" />
-      <recent name="WebSide.bean" />
-      <recent name="WeChatAC" />
-      <recent name="WebSide.IO" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\FZ-kingdee\LogServer\out\artifacts\Assist\MGM\feedBack" />
-      <recent name="E:\FZ-kingdee\LogServer\web\webpage" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1558,7 +1483,17 @@
       <workItem from="1587864565527" duration="642000" />
       <workItem from="1588040784149" duration="10188000" />
       <workItem from="1588066331669" duration="2348000" />
-      <workItem from="1588212198199" duration="5068000" />
+      <workItem from="1588212198199" duration="5191000" />
+      <workItem from="1588735786997" duration="2662000" />
+      <workItem from="1588753392881" duration="23000" />
+      <workItem from="1589338048890" duration="2558000" />
+      <workItem from="1589357955414" duration="160000" />
+      <workItem from="1590460418389" duration="1113000" />
+      <workItem from="1590478394434" duration="899000" />
+      <workItem from="1591165177601" duration="535000" />
+      <workItem from="1592468299030" duration="1269000" />
+      <workItem from="1594796012291" duration="3339000" />
+      <workItem from="1594805129114" duration="1208000" />
     </task>
     <task id="LOCAL-00001" summary="调整">
       <created>1578969882554</created>
@@ -1637,11 +1572,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587722453483</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="调整版本更新界面">
+      <created>1588236973396</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588236973396</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1442546000" />
+    <option name="totallyTimeSpent" value="1456435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1653,39 +1595,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3449024" sideWeight="0.50959486" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40455532" sideWeight="0.4904051" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23134328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4815618" sideWeight="0.4904051" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20948827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1722,7 +1664,8 @@
     <MESSAGE value="主页添加轮播" />
     <MESSAGE value="数据中心添加登录session登录验证" />
     <MESSAGE value="注册用户列表改用vue，可按时间显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册用户列表改用vue，可按时间显示" />
+    <MESSAGE value="调整版本更新界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整版本更新界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1748,169 +1691,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/WebSide/BackUpCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeChatAC/CheckUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/Home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <marker date="1584611497736" expanded="false" signature="1581:1606" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/bean/UserLoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="126" column="12" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1586422459717" expanded="true" signature="1181:1302" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1586422459717" expanded="true" signature="1775:1812" ph="SELECT COUNT... Login_Base" />
-            <marker date="1586422459717" expanded="true" signature="2313:2382" ph="SELECT * FRO... Login_Base" />
-            <marker date="1586422459717" expanded="true" signature="2942:3098" ph="INSERT INTO Login_Base... " />
-            <marker date="1586422459717" expanded="true" signature="3945:4108" ph="UPDATE Login... " />
-            <marker date="1586422459717" expanded="true" signature="7504:7552" ph="DELETE FROM " />
-            <marker date="1586422459717" expanded="true" signature="7694:7746" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/MathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/FileControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/HttpRequestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyLog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_log.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="38" column="2" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_create.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/BackUpData.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="68" column="2" lean-forward="false" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/img/login_bg2.jpg" />
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/img/login_bg3.jpg" />
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/img/login_bg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/errorHttp.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/JDBCUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/index_mgm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bean/RegisterCodeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebSide/ApkApi/UploadRegisterUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1918,21 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="164" column="11" lean-forward="false" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
-          <folding>
-            <element signature="e#6283#6284#0" expanded="false" />
-            <element signature="e#6351#6352#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/LoginAppIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="77" column="90" lean-forward="false" selection-start-line="76" selection-start-column="12" selection-end-line="77" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1927#2011#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1940,9 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7150">
           <caret line="325" column="10" lean-forward="false" selection-start-line="325" selection-start-column="10" selection-end-line="325" selection-end-column="10" />
-          <folding>
-            <marker date="1587549129096" expanded="false" signature="8729:8773" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1950,7 +1716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1958,7 +1723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1967,7 +1731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1979,49 +1742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/company_find.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/ActiveUserList4AppID.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/CompanyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="98" column="13" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="method#changeCompany#0;class#CompanyDao#0" expanded="false" />
-            <element signature="method#changeUpgradeVersion#0;class#CompanyDao#0" expanded="false" />
-            <element signature="method#changeCompanyLog#0;class#CompanyDao#0" expanded="false" />
-            <element signature="method#deleteFeedBack#0;class#CompanyDao#0" expanded="false" />
-            <element signature="e#11593#11604#0" expanded="false" />
-            <marker date="1588046789506" expanded="true" signature="1082:1107" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="1082:1124" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="1621:1742" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="2201:2238" ph="SELECT COUNT... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="2714:2780" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="3398:3476" ph="SELECT * FRO... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="4031:4224" ph="INSERT INTO Tb_Company... " />
-            <marker date="1588046789506" expanded="true" signature="5206:5280" ph="select COUNT... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="5526:5761" ph="UPDATE Tb_Co... " />
-            <marker date="1588046789506" expanded="true" signature="6964:7042" ph="select COUNT... Tb_UpgradeBean" />
-            <marker date="1588046789506" expanded="true" signature="7264:7381" ph="UPDATE Tb_Up... " />
-            <marker date="1588046789506" expanded="true" signature="8100:8174" ph="select COUNT... Tb_Company" />
-            <marker date="1588046789506" expanded="true" signature="8420:8487" ph="UPDATE Tb_Co... " />
-            <marker date="1588046789506" expanded="true" signature="9062:9110" ph="DELETE FROM " />
-            <marker date="1588046789506" expanded="true" signature="9252:9304" ph="DELETE FROM " />
-            <marker date="1588046789506" expanded="true" signature="9803:9847" ph="SELECT * FRO... FeedBackOfWeb" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2029,17 +1753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#5852#7567#0#JSP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/ActiveManageList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="107" column="23" lean-forward="true" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2047,7 +1760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="38" column="97" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2055,7 +1767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2069,58 +1780,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/StatisticalDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="252" column="40" lean-forward="false" selection-start-line="252" selection-start-column="40" selection-end-line="252" selection-end-column="40" />
-          <folding>
-            <marker date="1588067761491" expanded="true" signature="1180:1269" ph="SELECT * FRO... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="1813:1894" ph="SELECT AppID... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="2535:2609" ph="SELECT disti... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="3192:3246" ph="SELECT disti... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="3760:3800" ph="SELECT disti... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="4294:4349" ph="SELECT * FRO... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="4885:4968" ph="SELECT sum(n... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="5822:5939" ph="Select count... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="6844:6961" ph="Select sum(n... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="7739:7809" ph="SELECT * FRO... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="8346:8421" ph="select num f... Tb_Statistical" />
-            <marker date="1588067761491" expanded="true" signature="8779:8925" ph="INSERT INTO Tb_Statistical... " />
-            <marker date="1588067761491" expanded="true" signature="9638:9732" ph="UPDATE Tb_St... " />
-            <marker date="1588067761491" expanded="true" signature="10718:10787" ph="select COUNT... Tb_Company" />
-            <marker date="1588067761491" expanded="true" signature="11027:11124" ph="UPDATE Tb_Co... " />
-            <marker date="1588067761491" expanded="true" signature="11675:11743" ph="select COUNT... Tb_Company" />
-            <marker date="1588067761491" expanded="true" signature="12213:12267" ph="UPDATE Tb_Co... " />
-            <marker date="1588067761491" expanded="true" signature="12687:12735" ph="DELETE FROM " />
-            <marker date="1588067761491" expanded="true" signature="14294:14371" ph="SELECT * FRO... Tb_register" />
-            <marker date="1588067761491" expanded="true" signature="14932:15003" ph="select * fro... Tb_register" />
-            <marker date="1588067761491" expanded="true" signature="15323:15454" ph="INSERT INTO Tb_register... " />
-            <marker date="1588067761491" expanded="true" signature="15933:16009" ph="UPDATE Tb_re... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/CommonUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/WebSide/Utils/Info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2128,14 +1792,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="9" column="82" lean-forward="true" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebSide/UpgradeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+        <state relative-caret-position="1016">
+          <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
           <folding>
             <marker date="1576662863792" expanded="true" signature="1085:1139" ph="SELECT * FRO... Tb_UpgradeBean" />
             <marker date="1576662863792" expanded="true" signature="1598:1639" ph="SELECT COUNT... Tb_UpgradeBean" />
@@ -2153,69 +1816,339 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        <state relative-caret-position="620">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1588235792009" expanded="false" signature="3866:3876" ph="..." />
-            <marker date="1588235792009" expanded="false" signature="3917:3935" ph="..." />
-            <marker date="1588235792009" expanded="false" signature="4163:4193" ph="..." />
+            <element signature="e#2881#4038#0#JSP" expanded="false" />
+            <marker date="1588236105515" expanded="false" signature="2773:2796" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebSide/UpgradeChange.java">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/item_TopNav_mgm.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="950">
+          <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/company_find.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bean/TaskBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bean/UpgradeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bean/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="92" column="80" lean-forward="false" selection-start-line="92" selection-start-column="80" selection-end-line="92" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/ApkApi/getCompanyData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/poi-4.1.0.jar!/org/apache/poi/hssf/usermodel/HSSFWorkbook.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="125" column="34" lean-forward="true" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/ExcelExport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/CompanyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="method#changeCompany#0;class#CompanyDao#0" expanded="false" />
+            <element signature="method#changeUpgradeVersion#0;class#CompanyDao#0" expanded="false" />
+            <element signature="method#changeCompanyLog#0;class#CompanyDao#0" expanded="false" />
+            <element signature="method#deleteFeedBack#0;class#CompanyDao#0" expanded="false" />
+            <element signature="e#11594#11605#0" expanded="false" />
+            <marker date="1589339243404" expanded="true" signature="1082:1107" ph="SELECT * FRO... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="1082:1124" ph="SELECT * FRO... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="1621:1742" ph="SELECT * FRO... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="2201:2238" ph="SELECT COUNT... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="2714:2780" ph="SELECT * FRO... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="3399:3477" ph="SELECT * FRO... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="4032:4225" ph="INSERT INTO Tb_Company... " />
+            <marker date="1589339243404" expanded="true" signature="5207:5281" ph="select COUNT... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="5527:5762" ph="UPDATE Tb_Co... " />
+            <marker date="1589339243404" expanded="true" signature="6965:7043" ph="select COUNT... Tb_UpgradeBean" />
+            <marker date="1589339243404" expanded="true" signature="7265:7382" ph="UPDATE Tb_Up... " />
+            <marker date="1589339243404" expanded="true" signature="8101:8175" ph="select COUNT... Tb_Company" />
+            <marker date="1589339243404" expanded="true" signature="8421:8488" ph="UPDATE Tb_Co... " />
+            <marker date="1589339243404" expanded="true" signature="9063:9111" ph="DELETE FROM " />
+            <marker date="1589339243404" expanded="true" signature="9253:9305" ph="DELETE FROM " />
+            <marker date="1589339243404" expanded="true" signature="9804:9848" ph="SELECT * FRO... FeedBackOfWeb" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/BackUpCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/BackUpUpgrade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set_upgrade.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1628">
+          <caret line="74" column="18" lean-forward="false" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <marker date="1588745687339" expanded="false" signature="4210:4220" ph="..." />
+            <marker date="1588745687339" expanded="false" signature="4261:4279" ph="..." />
+            <marker date="1588745687339" expanded="false" signature="4507:4537" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/errorHttp.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/Info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#348#349#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/errorHttp.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/LoginAppIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="e#1927#2011#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/ActiveManageList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#4313#5059#0#JSP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/Case.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="104" column="87" lean-forward="true" selection-start-line="104" selection-start-column="87" selection-end-line="104" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/BackUpData.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="63" column="2" lean-forward="false" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/Company_set.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="77" column="37" lean-forward="false" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+        <state relative-caret-position="264">
+          <caret line="72" column="18" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bean/Company.java">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/DownList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/uploadFileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/ApkApi/UploadStatistical.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/StatisticalDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="326" column="49" lean-forward="true" selection-start-line="326" selection-start-column="49" selection-end-line="326" selection-end-column="49" />
+          <folding>
+            <marker date="1591165372740" expanded="true" signature="1180:1269" ph="SELECT * FRO... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="1813:1894" ph="SELECT AppID... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="2535:2609" ph="SELECT disti... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="3192:3246" ph="SELECT disti... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="3760:3800" ph="SELECT disti... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="4294:4349" ph="SELECT * FRO... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="4885:4968" ph="SELECT sum(n... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="5822:5939" ph="Select count... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="6844:6961" ph="Select sum(n... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="7739:7809" ph="SELECT * FRO... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="8346:8421" ph="select num f... Tb_Statistical" />
+            <marker date="1591165372740" expanded="true" signature="8779:8925" ph="INSERT INTO Tb_Statistical... " />
+            <marker date="1591165372740" expanded="true" signature="9638:9746" ph="UPDATE Tb_St... " />
+            <marker date="1591165372740" expanded="true" signature="10773:10842" ph="select COUNT... Tb_Company" />
+            <marker date="1591165372740" expanded="true" signature="11082:11179" ph="UPDATE Tb_Co... " />
+            <marker date="1591165372740" expanded="true" signature="11730:11798" ph="select COUNT... Tb_Company" />
+            <marker date="1591165372740" expanded="true" signature="12268:12322" ph="UPDATE Tb_Co... " />
+            <marker date="1591165372740" expanded="true" signature="12742:12790" ph="DELETE FROM " />
+            <marker date="1591165372740" expanded="true" signature="14349:14426" ph="SELECT * FRO... Tb_register" />
+            <marker date="1591165372740" expanded="true" signature="14987:15058" ph="select * fro... Tb_register" />
+            <marker date="1591165372740" expanded="true" signature="15378:15509" ph="INSERT INTO Tb_register... " />
+            <marker date="1591165372740" expanded="true" signature="15988:16064" ph="UPDATE Tb_re... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebSide/UpgradeChange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/item_TopNavbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/Home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/FeedBack.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-506">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WeChatAC/WeChatForCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WeChatAC/CheckUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/item_TopNav_mgm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/UpgradeList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="78" column="49" lean-forward="true" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/Assist/MGM/CompanyList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
-          <folding>
-            <element signature="e#2881#4038#0#JSP" expanded="false" />
-            <marker date="1588236105515" expanded="false" signature="2773:2796" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

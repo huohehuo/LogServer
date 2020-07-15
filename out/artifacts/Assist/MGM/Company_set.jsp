@@ -74,7 +74,7 @@
             <div class="form-inline" style="margin-bottom: 10px">
                 <div class="form-group" style="width: 25%">
                     <a style="margin-right: 20px">APPID:(不可修改)</a>
-                    <input type="text" class="form-control" id="app_id" placeholder="Enter telephone" name="app_id"
+                    <input readonly="true" type="text" class="form-control" id="app_id" placeholder="Enter telephone" name="app_id"
                            value="<%=company.getAppID()%>" style="width: 100%;margin-right: 10px">
                 </div>
                 <div class="form-group" style="width: 25%">

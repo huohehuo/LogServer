@@ -28,9 +28,7 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <%--<link rel="stylesheet" href="css/bootstrap.min.css">--%>
 </head>
-<script>
-    .list{font:Georgia, "Times New Roman", Times, serif;font-size:14px;width:200px;display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;}
-</script>
+
 <body>
 <%
     String userName = (String)session.getAttribute(Info.FUserNameKey);

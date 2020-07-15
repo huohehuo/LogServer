@@ -58,11 +58,11 @@
         <div class="col-md-4">
             <div class="card" style="width: 100%;">
                 <div class="card-body">
-                    <h3 class="card-text">深圳市方左科技有限公司aaaa</h3>
+                    <h3 class="card-text">深圳市方左科技有限公司</h3>
                     <p class="card-text"></p>
                     <p class="card-text">企业类型：有限责任公司</p>
                     <p class="card-text">主营产品：金蝶PDA|PDA软件定制开发|条码采集软件程序开发</p>
-                    <p class="card-text">公司地址：广东省深圳市罗湖区</p>
+                    <p class="card-text">公司地址：广东省深圳市龙岗区</p>
                     <p class="card-text">联系电话：邱经理 18319928705</p>
                     <!-- <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a> -->
@@ -118,7 +118,7 @@
                     <p class="card-text"></p>
                     <p class="card-text">企业类型：有限责任公司</p>
                     <p class="card-text">主营产品：金蝶PDA|PDA软件定制开发|条码采集软件程序开发</p>
-                    <p class="card-text">公司地址：广东省深圳市罗湖区</p>
+                    <p class="card-text">公司地址：广东省深圳市龙岗区</p>
                     <p class="card-text">联系电话：邱经理 18319928705</p>
                     <!-- <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a> -->

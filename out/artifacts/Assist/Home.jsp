@@ -88,10 +88,10 @@
                 <p class="card-text"></p>
                 <p class="card-text">企业类型：有限责任公司</p>
                 <p class="card-text">主营产品：金蝶PDA|PDA软件定制开发|条码采集软件程序开发</p>
-                <p class="card-text">公司地址：广东省深圳市罗湖区</p>
+                <p class="card-text">公司地址：广东省深圳市龙岗区</p>
                 <p class="card-text">联系电话：邱经理 18319928705</p>
                 <p class="card-text">深圳方左科技有限公司，简称（方左技术）专业从事于企业可视化移动条码采集信息化精益管理整体解决方案
-                    ，方左技术以其贴近用户的差异化创新、立志在***短时间内成为市面上价值服务宗旨的管理方案专家，以持之以恒的科研投入、严格有效的质量控制、快捷放心的售后服务，
+                    ，方左技术以其贴近用户的差异化创新、立志在短时间内成为市面上价值服务宗旨的管理方案专家，以持之以恒的科研投入、严格有效的质量控制、快捷放心的售后服务，
                     方左技术坚持以技术创新为持续发展之根本，秉承“人才，团队，管理，技术”的核心管理理念，方左技术将继续坚持以更贴合业务的解决方案、
                     更高质量的产品和更快捷放心的服务回报客户，为客户提供贴身、完整的可视化移动条码采集精益管理应用解决方案，不断帮助客户创造价值，成为您身边的精益生产管理专家</p>
                 <!-- <a href="#" class="card-link">Card link</a>
@@ -109,7 +109,7 @@
                 <p class="card-text"></p>
                 <p class="card-text">企业类型：有限责任公司</p>
                 <p class="card-text">主营产品：金蝶PDA|PDA软件定制开发|条码采集软件程序开发</p>
-                <p class="card-text">公司地址：广东省深圳市罗湖区</p>
+                <p class="card-text">公司地址：广东省深圳市龙岗区</p>
                 <p class="card-text">联系电话：邱经理 18319928705</p>
                 <!-- <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a> -->
@@ -126,7 +126,7 @@
                 <p class="card-text"></p>
                 <p class="card-text">企业类型：有限责任公司</p>
                 <p class="card-text">主营产品：金蝶PDA|PDA软件定制开发|条码采集软件程序开发</p>
-                <p class="card-text">公司地址：广东省深圳市罗湖区</p>
+                <p class="card-text">公司地址：广东省深圳市龙岗区</p>
                 <p class="card-text">联系电话：邱经理 18319928705</p>
                 <!-- <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a> -->

@@ -56,6 +56,12 @@
         </div>
         <%--<input type="button" value="更改提示" onclick="document.getElementById('tips').innerHTML = '删除成功'"/>--%>
         <%--<div class="alert alert-info">信息！请注意这个信息。</div>--%>
+        <%--<form method="post" action="uploadFileTest" enctype="multipart/form-data">  --%>
+            <%--文件名：<input type="text" id="namefile" name="namefile" /><br/>   --%>
+            <%--选择文件：<input type="file" id="filewww" name="filewww" /><br/>--%>
+            <%--<input type="submit" value="上传" /><br/> --%>
+        <%--</form>--%>
+
         <form action="./UpgradeChange" method="post" style="padding: 50px">
             <button type="submit" class="btn btn-primary">确定修改</button>
             <div class="form-inline" style="margin-bottom: 10px">
@@ -78,6 +84,7 @@
                     <input type="text" class="form-control" id="app_version" placeholder="Enter telephone" name="app_version"
                            value="<%=company.getAppVersion()%>" style="width: 100%;margin-right: 10px">
                 </div>
+
                 <%--<div class="form-group" style="width: 25%">--%>
                     <%--<a style="margin-right: 20px">更新日期:</a>--%>
                     <%--<input type="text" class="form-control" id="upgrade_time" placeholder="Enter telephone" name="upgrade_time"--%>
