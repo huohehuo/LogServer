@@ -78,7 +78,8 @@
 </style>
 <body>
 <%
-    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    //    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    String userName = Info.FUserName_Save;
     if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
         response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
     }
@@ -101,24 +102,30 @@
 
     String thisMon= CommonUtil.getTime(true);
     List<LiveDataBean> liveData = statisticalDao.getStatisticalLiveData4User(thisMon.substring(0,thisMon.length()-2));
+    List<LiveDataBean> liveData4Client = statisticalDao.getStatisticalLiveData4Client(thisMon.substring(0,thisMon.length()-2));
 //    List<LiveDataBean> liveData4Num = statisticalDao.getStatisticalLiveData4Num(thisMon.substring(0,thisMon.length()-2));//无法统计每天活跃度
     List<String> dayList = new ArrayList<>();
-//    List<String> dayList4Num = new ArrayList<>();
+    List<String> dayList4Client = new ArrayList<>();
     for (int i = 0; i <= 31; i++) {
         dayList.add(i,"0");
-//        dayList4Num.add(i,"0");
+        dayList4Client.add(i,"0");
     }
-//    Lg.e("得到daylist1111"+dayList.size(),dayList);
 
     /*活跃用户数*/
     for (int i = 0; i <= 32; i++) {
         for (int j = 0; j < liveData.size(); j++) {
-            Lg.e("liveData"+i,MathUtil.toInt(liveData.get(j).LDay));
+//            Lg.e("liveData"+i,MathUtil.toInt(liveData.get(j).LDay));
             if (MathUtil.toInt(liveData.get(j).LDay)==i){
-                Lg.e("替换"+i+"--"+liveData.get(j).LNum);
+//                Lg.e("替换"+i+"--"+liveData.get(j).LNum);
                 dayList.set(i-1,liveData.get(j).LNum);
             }
         }
+        for (int j = 0; j < liveData4Client.size(); j++) {
+            if (MathUtil.toInt(liveData4Client.get(j).LDay)==i){
+                dayList4Client.set(i-1,liveData4Client.get(j).LNum);
+            }
+        }
+
     }
 //    /*活跃度*/
 //    for (int i = 0; i <= 32; i++) {
@@ -146,7 +153,7 @@
                 <h3>今日活跃人数:  <%=statisticalLiveUserNum%></h3>
             </div>
             <div class="statiscard card" onclick="location.href='ActiveUserList.jsp'">
-                <h3>占比:  <%=MathUtil.D2saveInt(MathUtil.toD(statisticalActiveNum)/MathUtil.toD(statisticalNum)*100)+"%"%></h3>
+                <h3>占比:  <%=MathUtil.D2saveInt(MathUtil.toD(statisticalLiveUserNum)/MathUtil.toD(statisticalNum)*100)+"%"%></h3>
             </div>
         </div>
 </div>
@@ -162,7 +169,7 @@
     // JS 代码
     var chart = Highcharts.chart('container', {
         title: {
-            text: '当月活跃人数情况'
+            text: '当月活跃情况'
         },
 //        subtitle: {
 //            text: '数据来源：thesolarfoundation.com'
@@ -186,8 +193,71 @@
             }
         },
         series: [{
+            name: '活跃客户',
+            data: <%=dayList4Client%>
+//            data:[5, 10, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2]
+        }
+ , {
             name: '活跃人数',
-            data: <%=dayList%>
+            data:  <%=dayList%>
+        }
+//        , {
+//            name: '销售',
+//            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+//        }, {
+//            name: '项目开发',
+//            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+//        }, {
+//            name: '其他',
+//            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+//        }
+        ],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
+</script>
+<%--<script>
+    // JS 代码
+    var chart = Highcharts.chart('container2', {
+        title: {
+            text: '当月活跃度情况'
+        },
+//        subtitle: {
+//            text: '数据来源：thesolarfoundation.com'
+//        },
+        yAxis: {
+            title: {
+                text: '活跃度(进入软件)'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 1
+            }
+        },
+        series: [{
+            name: '活跃度',
+            data: <%=liveData4Client%>
 //            data:[5, 10, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2]
         }
 // , {
@@ -219,69 +289,7 @@
             }]
         }
     });
-</script>
-<%--<script>--%>
-    <%--// JS 代码--%>
-    <%--var chart = Highcharts.chart('container2', {--%>
-        <%--title: {--%>
-            <%--text: '当月活跃度情况'--%>
-        <%--},--%>
-<%--//        subtitle: {--%>
-<%--//            text: '数据来源：thesolarfoundation.com'--%>
-<%--//        },--%>
-        <%--yAxis: {--%>
-            <%--title: {--%>
-                <%--text: '活跃度(进入软件)'--%>
-            <%--}--%>
-        <%--},--%>
-        <%--legend: {--%>
-            <%--layout: 'vertical',--%>
-            <%--align: 'right',--%>
-            <%--verticalAlign: 'middle'--%>
-        <%--},--%>
-        <%--plotOptions: {--%>
-            <%--series: {--%>
-                <%--label: {--%>
-                    <%--connectorAllowed: false--%>
-                <%--},--%>
-                <%--pointStart: 1--%>
-            <%--}--%>
-        <%--},--%>
-        <%--series: [{--%>
-            <%--name: '活跃度',--%>
-            <%--data: <%=dayList4Num%>--%>
-<%--//            data:[5, 10, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2, 20, 30, 30, 30, 2]--%>
-        <%--}--%>
-<%--// , {--%>
-<%--//            name: '工人',--%>
-<%--//            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]--%>
-<%--//        }, {--%>
-<%--//            name: '销售',--%>
-<%--//            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]--%>
-<%--//        }, {--%>
-<%--//            name: '项目开发',--%>
-<%--//            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]--%>
-<%--//        }, {--%>
-<%--//            name: '其他',--%>
-<%--//            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]--%>
-<%--//        }--%>
-        <%--],--%>
-        <%--responsive: {--%>
-            <%--rules: [{--%>
-                <%--condition: {--%>
-                    <%--maxWidth: 500--%>
-                <%--},--%>
-                <%--chartOptions: {--%>
-                    <%--legend: {--%>
-                        <%--layout: 'horizontal',--%>
-                        <%--align: 'center',--%>
-                        <%--verticalAlign: 'bottom'--%>
-                    <%--}--%>
-                <%--}--%>
-            <%--}]--%>
-        <%--}--%>
-    <%--});--%>
-<%--</script>--%>
+</script>--%>
 
 </body>
 

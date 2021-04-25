@@ -28,10 +28,10 @@
 </head>
 <%--<body>--%>
 <%
-    String userName = (String)session.getAttribute(Info.FUserNameKey);
-    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
-        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
-    }
+//    String userName = (String)session.getAttribute(Info.FUserNameKey);
+//    if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
+//        response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
+//    }
 %>
 <frameset cols="66,*" frameborder="no" border="0">
     <frame src="item_TopNav_mgm.jsp" name="Mgm_Left" scrolling="auto">

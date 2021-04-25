@@ -32,7 +32,8 @@
 
 <body>
 <%
-    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    //    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    String userName = Info.FUserName_Save;
     if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
         response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
     }

@@ -49,16 +49,29 @@
 
 </head>
 <%
-    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    StatisticalDao statisticalDao = new StatisticalDao();
+
+
+    String feedback = (String) request.getAttribute("feedback");
+    //    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    String userName = Info.FUserName_Save;
+    String baseUrl = request.getContextPath();
     if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
         response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
     }
 
     String thistime = CommonUtil.getTime(false);
     String basevuelink = Info.BaseVueLink;
-    StatisticalDao statisticalDao = new StatisticalDao();
     String thisMon= CommonUtil.getTime(true);
-    List<LiveDataBean> liveData = statisticalDao.getStatisticalLiveData4User(thisMon.substring(0,thisMon.length()-2));
+    String cutTime = "";
+    if ("".equals(feedback) || null == feedback){
+        cutTime = thisMon.substring(0,thisMon.length()-2);
+    }else{
+        cutTime = feedback+"-";
+    }
+    Lg.e("查询",feedback);
+    Lg.e("查询2",cutTime);
+    List<LiveDataBean> liveData = statisticalDao.getStatisticalLiveData4User(cutTime);
 //    List<LiveDataBean> liveData4Num = statisticalDao.getStatisticalLiveData4Num(thisMon.substring(0,thisMon.length()-2));//无法统计每天活跃度
     List<String> dayList = new ArrayList<>();
 //    List<String> dayList4Num = new ArrayList<>();
@@ -71,9 +84,9 @@
     /*活跃用户数*/
     for (int i = 0; i <= 32; i++) {
         for (int j = 0; j < liveData.size(); j++) {
-            Lg.e("liveData"+i,MathUtil.toInt(liveData.get(j).LDay));
+//            Lg.e("liveData"+i,MathUtil.toInt(liveData.get(j).LDay));
             if (MathUtil.toInt(liveData.get(j).LDay)==i){
-                Lg.e("替换"+i+"--"+liveData.get(j).LNum);
+//                Lg.e("替换"+i+"--"+liveData.get(j).LNum);
                 dayList.set(i-1,liveData.get(j).LNum);
             }
         }
@@ -96,8 +109,12 @@
             <h5 >当天数据</h5>
             <div  class="form-inline" >
                 <a>时间过滤查询</a>
-                <input type="text" class="form-control" id="seach" placeholder="Enter your name" name="seach" v-model="search_name"
-                       style="width: 50%;margin: 10px">
+                <form action="<%=baseUrl%>/GetStatisticalLiveDataByTime" method="post">
+                    <input type="text" class="form-control" id="search" placeholder="Enter your name" name="search" v-model="search_name"
+                           style="width: 50%;margin: 10px">
+                    <button type="submit" class="btn btn-primary"  style="width: 100%">查找</button>
+                </form>
+
             </div>
 
         </div>
@@ -192,7 +209,7 @@
     // JS 代码
     var chart = Highcharts.chart('container', {
         title: {
-            text: '{{box_text}}'
+            text: '活跃度'
         },
 //        subtitle: {
 //            text: '数据来源：thesolarfoundation.com'

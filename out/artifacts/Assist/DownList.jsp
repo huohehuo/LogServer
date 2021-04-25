@@ -59,12 +59,12 @@
                         <tbody>
                         <tr>
                             <td>JAVA</td>
-                            <td><a href="http://www.fangzuokeji.com/GwRes/java64.exe">JAVA(64位)</a>----<a href="http://www.fangzuokeji.com/GwRes/java32.exe">JAVA(32位)</a></td>
+                            <td><a href="http://www.fangzuokeji.com/GwRes/java64.rar" download="java64.rar">JAVA(64位)</a>----<a href="http://www.fangzuokeji.com/GwRes/java32.rar" download="java32.rar">JAVA(32位)</a></td>
                             <td>根据windows系统版本选择</td>
                         </tr>
                         <tr>
                             <td>Tomcat</td>
-                            <td><a href="http://www.fangzuokeji.com/res/apache-tomcat-8.5.38.exe">apache-tomcat-8.5.38</a></td>
+                            <td><a href="http://www.fangzuokeji.com/GwRes/apache-tomcat-8.5.38.rar" download="apache-tomcat-8.5.38.rar">apache-tomcat-8.5.38</a></td>
                             <td></td>
                         </tr>
                         </tbody>

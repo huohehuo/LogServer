@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <%--<body>--%>
+<%
+    Lg.e("连接", request.getContextPath());
+    Lg.e("连接", request.getRequestURI());
+    Lg.e("连接", request.getServletPath());
+    String path =request.getSession().getServletContext().getRealPath("dbCompany.db");
+    Lg.e("地址：",path);
+%>
 
 <frameset rows="56,*" frameborder="no" border="0">
     <frame src="item_TopNavbar.jsp" scrolling="no">

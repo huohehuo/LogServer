@@ -33,6 +33,8 @@ public class LoginAppIO extends HttpServlet {
         String database = request.getParameter("database");
         Lg.e(userName+pwd);
         if ("admin".equals(userName) && "fangzuokeji601.".equals(pwd)){
+            Info.FUserName_Save = userName;
+            Info.FUserPwd_Save = pwd;
             session.setAttribute(Info.FUserNameKey, userName);
             session.setAttribute(Info.FUserPwdKey, pwd);
             session.setAttribute(Info.FServerIPKey, ip);

@@ -2,6 +2,8 @@ package WebSide;
 
 import Bean.Company;
 import Bean.FeedBackBean;
+import Bean.RegisterCodeBean;
+import Utils.CommonUtil;
 import Utils.JDBCUtil;
 import Utils.Lg;
 import Utils.MathUtil;
@@ -176,6 +178,7 @@ public class CompanyDao {
 		}
 		return false;
 	}
+
 	//修改公司信息(先查出是否包含appid所属的公司，再通过各个字段名更新数据)
 	public boolean changeCompany(Company company){
 		try {
@@ -377,6 +380,154 @@ public class CompanyDao {
 		}
 	}
 
+
+	//region 注册用户管理
+	//------------------------------------------------------------------------------------注册用户---
+
+	//查找公司对应的所有注册用户
+	public List<Company> findCompanyRegister(String appid){
+		List<Company> list = new ArrayList<>();
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String SQL = "SELECT * FROM Tb_Cp_Register WHERE AppID='"+appid+"' ORDER BY rid DESC ";
+			sta = conn.prepareStatement(SQL);
+			rs = sta.executeQuery();
+			while (rs.next()) {
+				list.add(backBeanCpR(rs));
+			}
+			Lg.e("findCompanyRegister",list);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return list;
+	}
+	//添加公司的注册用户信息
+	public boolean addCompanyRegister(RegisterCodeBean company){
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String findSQL ="select COUNT(*) as 数量 from Tb_Cp_Register where AppID = '"+company.AppID+"' AND register_code = '"+company.register_code+"'" ;
+			sta = conn.prepareStatement(findSQL);
+			rs = sta.executeQuery();
+			String num="";
+			while (rs.next()) {
+				num = rs.getString("数量");
+			}
+			Lg.e("存在需要修改的公司注册用户信息"+num);
+			if (MathUtil.toD(num)<=0){
+				String SQL = "INSERT INTO Tb_Cp_Register (register_code, AppID,imie,CanUse,create_time) VALUES (?,?,?,?,?)";
+				sta = conn.prepareStatement(SQL);
+				sta.setString(1,company.register_code);
+				sta.setString(2,company.AppID);
+				sta.setString(3,company.imie);
+				sta.setString(4,"0");
+				sta.setString(5, CommonUtil.getTimeLong(true));
+				int i = sta.executeUpdate();
+				if(i>0){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return true;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return false;
+	}
+	//删除公司所对应的注册码信息
+	public boolean deleteCompanyRegister(String appid,String code){
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String SQL = "DELETE FROM Tb_Cp_Register WHERE AppID = '"+appid+"' AND register_code = '"+code+"'" ;
+			Lg.e("删除项目："+SQL);
+			sta = conn.prepareStatement(SQL);
+			return sta.execute();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return false;
+	}
+	//修改制定注册码信息是否可用
+	public boolean changeCompanyRegister(String appid,String code,String can){
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String findSQL ="select COUNT(*) as 数量 from Tb_Cp_Register where AppID = '"+appid+"' AND register_code = '"+code+"'" ;
+			sta = conn.prepareStatement(findSQL);
+			rs = sta.executeQuery();
+			String num="";
+			while (rs.next()) {
+				num = rs.getString("数量");
+			}
+			Lg.e("存在需要修改的公司注册用户信息"+num);
+			if (MathUtil.toD(num)<=0){
+				return false;
+			}
+			String SQL = "UPDATE Tb_Cp_Register set CanUse=? WHERE AppID = '"+appid+"' AND register_code = '"+code+"'" ;
+			Lg.e("更新数据库语句"+SQL);
+			sta = conn.prepareStatement(SQL);
+			sta.setString(1,can);
+			int i = sta.executeUpdate();
+			if(i>0){
+				return true;
+			}else{
+				JDBCUtil.close(rs,sta,conn);
+				return false;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			JDBCUtil.close(rs,sta,conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			JDBCUtil.close(rs,sta,conn);
+		}finally {
+//			JDBCUtil.close(rs,sta,conn);
+		}
+		return false;
+	}
+
+	//通过appid和注册码，查找注册状态
+	public boolean getCompanyRegisterStatus(String appid,String code){
+		try {
+			conn = JDBCUtil.getSQLite4Company();
+			String findSQL ="select CanUse as 数量 from Tb_Cp_Register where AppID = '"+appid+"' AND register_code = '"+code+"'" ;
+			sta = conn.prepareStatement(findSQL);
+			rs = sta.executeQuery();
+			String num="";
+			while (rs.next()) {
+				num = rs.getString("数量");
+			}
+			if ("1".equals(num)){
+				return true;
+			}else{
+				return false;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			JDBCUtil.close(rs,sta,conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			JDBCUtil.close(rs,sta,conn);
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		return false;
+	}
+
+	//endregion
+
 	//统一获取表数据
 	private Company backBean(ResultSet rs) throws SQLException{
 		Company bean = new Company();
@@ -395,6 +546,27 @@ public class CompanyDao {
 		bean.Address = rs.getString("Address");
 		bean.create_time = rs.getString("create_time");
 		bean.user_num_max = rs.getString("user_num_max");
+		return bean;
+	}
+	//统一获取表数据
+	private Company backBeanCpR(ResultSet rs) throws SQLException{
+		Company bean = new Company();
+		bean.id = rs.getInt("rid");
+//		bean.CompanyName = rs.getString("CompanyName");
+//		bean.AppVersion = rs.getString("App_Version");
+//		bean.AppVersion2 = rs.getString("App_Version2");
+//		bean.AppVersion3 = rs.getString("App_Version3");
+//		bean.KingdeeVersion = rs.getString("Kd_Version");
+		bean.AppID = rs.getString("AppID");
+//		bean.Remark = rs.getString("Remark");
+//		bean.Img_Logo = rs.getString("Img_Logo");
+		bean.CanUse = rs.getString("CanUse");
+//		bean.EndTime = rs.getString("EndTime_server");
+//		bean.Phone = rs.getString("Phone");
+//		bean.Address = rs.getString("Address");
+		bean.create_time = rs.getString("create_time");
+		bean.register_code = rs.getString("register_code");
+		bean.imie = rs.getString("imie");
 		return bean;
 	}
 

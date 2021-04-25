@@ -25,7 +25,19 @@ public class StatisticalDao {
 	protected static String UPDATE_SQL = "update user set "
 			+ "name=?,password=?,sex=?,age=? where name=?";
 	protected static String DELETE_SQL = "delete from user where name=?";
-
+	private static List<String> dayList = new ArrayList<>();
+	static {
+		dayList.add("01");dayList.add("11");dayList.add("21");
+		dayList.add("02");dayList.add("12");dayList.add("22");
+		dayList.add("03");dayList.add("13");dayList.add("23");
+		dayList.add("04");dayList.add("14");dayList.add("24");
+		dayList.add("05");dayList.add("15");dayList.add("25");
+		dayList.add("06");dayList.add("16");dayList.add("26");
+		dayList.add("07");dayList.add("17");dayList.add("27");
+		dayList.add("08");dayList.add("18");dayList.add("28");
+		dayList.add("09");dayList.add("19");dayList.add("29");
+		dayList.add("10");dayList.add("20");dayList.add("30");dayList.add("31");
+	}
 	public PreparedStatement prepStmt = null;
 	Connection conn = null;
 	PreparedStatement sta = null;
@@ -131,7 +143,7 @@ public class StatisticalDao {
 		int num=0;
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT distinct imie FROM Tb_Statistical";
+			String SQL = "SELECT distinct imie FROM Tb_Statistical GROUP BY imie";
 			sta = conn.prepareStatement(SQL);
 			rs = sta.executeQuery();
 			while (rs.next()) {
@@ -153,7 +165,7 @@ public class StatisticalDao {
 		int num=0;
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
-			String SQL = "SELECT * FROM Tb_Statistical WHERE realTimeShort LIKE ?";
+			String SQL = "SELECT distinct imie FROM Tb_Statistical WHERE realTimeShort LIKE ? GROUP BY  AppID,imie";
 			sta = conn.prepareStatement(SQL);
 			sta.setString(1,CommonUtil.getTime(true));
 			rs = sta.executeQuery();
@@ -197,25 +209,48 @@ public class StatisticalDao {
 		return num+"";
 	}
 
-	//获取统计信息表中的当天的活跃用户数
+	//获取统计当月，每天的用户机子数(以pda的IMIE码为条件)
 	public List<LiveDataBean> getStatisticalLiveData4User(String time){
 		List<LiveDataBean> liveDataBeans = new ArrayList<>();
 		try {
 			conn = JDBCUtil.getSQLite4Statistical();
 //			String SQL = "SELECT distinct realTime FROM Tb_Statistical WHERE realTime =?";
-			String SQL = "Select count(1) as 行数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by  realTimeShort";
-			Lg.e("获取当天活跃用户数SQL:"+SQL);
-			sta = conn.prepareStatement(SQL);
-			rs = sta.executeQuery();
-			while (rs.next()) {
+//			String SQL = "Select count(1) as 行数,realTimeShort From Tb_Statistical  where realTimeShort like '"+time+"%' group by imie";
+//			String SQL = "Select distinct count(1) as 行数 From Tb_Statistical  where realTimeShort = '2020-10-30' GROUP BY AppID,imie";
+//			Lg.e("获取当天活跃用户数SQL:"+SQL);
+//			sta = conn.prepareStatement(SQL);
+//			rs = sta.executeQuery();
+//			while (rs.next()) {
+//				LiveDataBean bean = new LiveDataBean();
+//				bean.LNum = rs.getString("行数");
+////				bean.LTime = rs.getString("realTimeShort");
+////				bean.LDay = bean.LTime.substring(8,10);
+//				bean.LTime = "2020-10-30";
+//				bean.LDay = bean.LTime.substring(8,10);
+//				liveDataBeans.add(bean);
+////			Lg.e("得到行数"+rs.getRow());
+////			num=rs.getRow();
+//			}
+			String sqlSc="";
+			for (int i = 0; i < dayList.size(); i++) {
+				int num=0;
+//				sqlSc = "SELECT * FROM Tb_Statistical WHERE realTimeShort = ? GROUP BY  AppID,imie";
+				sqlSc = "SELECT distinct imie FROM Tb_Statistical WHERE realTimeShort = ?  GROUP BY realTimeShort,AppID,imie";
+//				Lg.e("获取当天活跃用户数SQL:"+sqlSc);
+				sta = conn.prepareStatement(sqlSc);
+				sta.setString(1,time+dayList.get(i));
+				rs = sta.executeQuery();
+				while (rs.next()) {
+					num++;
+				}
+//				Lg.e("得到行数"+time+dayList.get(i)+"----"+num);
 				LiveDataBean bean = new LiveDataBean();
-				bean.LNum = rs.getString("行数");
-				bean.LTime = rs.getString("realTimeShort");
-				bean.LDay = bean.LTime.substring(8,10);
+				bean.LNum = num+"";
+				bean.LTime = time+dayList.get(i);
+				bean.LDay = dayList.get(i);
 				liveDataBeans.add(bean);
-//			Lg.e("得到行数"+rs.getRow());
-//			num=rs.getRow();
 			}
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -223,7 +258,43 @@ public class StatisticalDao {
 		}finally {
 			JDBCUtil.close(rs,sta,conn);
 		}
-		Lg.e("得到当天活跃用户数据",liveDataBeans);
+		Lg.e("得到当天活跃用户数据"+liveDataBeans.size(),liveDataBeans);
+		return liveDataBeans;
+	}
+
+	//获取统计当月，每天的客户数(以用户的程序id为条件)
+	public List<LiveDataBean> getStatisticalLiveData4Client(String time){
+		List<LiveDataBean> liveDataBeans = new ArrayList<>();
+		try {
+			conn = JDBCUtil.getSQLite4Statistical();
+			String sqlSc="";
+			for (int i = 0; i < dayList.size(); i++) {
+				int num=0;
+//				sqlSc = "SELECT * FROM Tb_Statistical WHERE realTimeShort = ? GROUP BY  AppID,imie";
+				sqlSc = "SELECT distinct AppID FROM Tb_Statistical WHERE realTimeShort = ?  GROUP BY realTimeShort,AppID,imie";
+//				Lg.e("获取当天活跃用户数SQL:"+sqlSc);
+				sta = conn.prepareStatement(sqlSc);
+				sta.setString(1,time+dayList.get(i));
+				rs = sta.executeQuery();
+				while (rs.next()) {
+					num++;
+				}
+//				Lg.e("得到行数"+time+dayList.get(i)+"----"+num);
+				LiveDataBean bean = new LiveDataBean();
+				bean.LNum = num+"";
+				bean.LTime = time+dayList.get(i);
+				bean.LDay = dayList.get(i);
+				liveDataBeans.add(bean);
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs,sta,conn);
+		}
+		Lg.e("得到当天活跃客户数据"+liveDataBeans.size(),liveDataBeans);
 		return liveDataBeans;
 	}
 	//获取统计信息表中的当月的活跃度
@@ -321,17 +392,17 @@ public class StatisticalDao {
 				}
 			}else{
 				int addnum=MathUtil.toInt(num)+1;
-				Lg.e("写入数量:"+addnum);
+//				Lg.e("写入数量:"+addnum,company);
 				String SQL = "UPDATE Tb_Statistical set num=?,realTime =?,phone=?,realTimeShort=?,App_Version=? WHERE AppID=? AND imie = ?";
 //				Lg.e("更新数据库语句"+SQL);
 				sta = conn.prepareStatement(SQL);
 				sta.setString(1,addnum+"");
 				sta.setString(2,company.realTime);
 				sta.setString(3,company.phone);
-				sta.setString(4,company.AppID);
-				sta.setString(5,company.imie);
-				sta.setString(6,company.realTimeShort);
-				sta.setString(7,company.AppVersion);
+				sta.setString(4,company.realTimeShort);
+				sta.setString(5,company.AppVersion);
+				sta.setString(6,company.AppID);
+				sta.setString(7,company.imie);
 				int i = sta.executeUpdate();
 				if(i>0){
 					//更新公司信息表的app版本号

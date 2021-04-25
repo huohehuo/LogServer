@@ -16,4 +16,8 @@ public class Info {
 	public static String FServerPwdKey="ServerPwdKey";
 	public static String FDatabaseKey="DatabaseKey";
 	public static String FUserDbName="UserDbName";
+
+
+	public static volatile String FUserName_Save="";
+	public static volatile String FUserPwd_Save="";
 }

@@ -36,7 +36,8 @@
 </head>
 <body>
 <%
-    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    //    String userName = (String)session.getAttribute(Info.FUserNameKey);
+    String userName = Info.FUserName_Save;
     if (null == userName || "".equals(userName)){//若本地session不存在登录用户的缓存数据，则跳到登录界面
         response.sendRedirect(request.getContextPath()+"/MGM/login.jsp");
     }
@@ -118,7 +119,7 @@
                     <th>APP版本号</th>
                     <th>当前用户数(<%=statisticalNum%>)</th>
                     <th>公司地址</th>
-                    <%--<th>时间控制日期</th>--%>
+                    <th>时间控制日期</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -135,7 +136,8 @@
                     <td><%=rs.getAddress() %></td>
                     <td><%=rs.getEndTime() %></td>
                     <%--<td style="height: 45px;width:80px"><%=rs.getLast_use_date() %></td>--%>
-                        <td><a href="../company_find?json=<%=rs.getAppID()%>">管理</a></td>
+                        <td><a href="../company_register_find?json=<%=rs.getAppID()%>">注册管理</a></td>
+                        <td><a href="../company_find?json=<%=rs.getAppID()%>">修改</a></td>
                         <td><a href="../company_find_4log?json=<%=rs.getAppID()%>">程序更新日志</a></td>
                 </tr>
                 </tbody>

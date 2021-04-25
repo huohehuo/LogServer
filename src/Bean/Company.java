@@ -13,10 +13,12 @@ public class Company {
     public String Address;//地址
     public String Remark;//备注
     public String EndTime;//终止日期格式： 20120101
-    public String CanUse;//0；允许使用，1停止使用
+    public String CanUse;//0；允许使用，1停止使用（）
     public String create_time;//创建日期
     public String user_num_max;//创建日期
     public String has_user_num;//创建日期
+    public String imie;//创建日期
+    public String register_code;//创建日期
 
     public Company(String companyName, String appVersion,String appVersion2,String appVersion3, String kingdeeVersion, String appID,
                    String img_Logo, String phone, String address, String remark, String endTime, String canUse, String createTime,String usermax) {
@@ -164,5 +166,29 @@ public class Company {
 
     public void setCanUse(String canUse) {
         CanUse = canUse;
+    }
+
+    public String getHas_user_num() {
+        return has_user_num;
+    }
+
+    public void setHas_user_num(String has_user_num) {
+        this.has_user_num = has_user_num;
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public String getRegister_code() {
+        return register_code;
+    }
+
+    public void setRegister_code(String register_code) {
+        this.register_code = register_code;
     }
 }
